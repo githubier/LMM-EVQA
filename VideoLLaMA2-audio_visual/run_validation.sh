@@ -1,1 +1,2 @@
-python videollama2/test.py --model-path /root/workspace/cvuaggk7v38s73dgjft0/videollama2_EVQA_weights_mse --modal-type av --json_file val.json
+#python videollama2/test.py --model-path /root/workspace/cvuaggk7v38s73dgjft0/videollama2weights --modal-type av --json_file test.json
+python videollama2/test.py --model-path /workspace/LMM-EVQA/SnapUGC/videollama2_EVQA_weights_mse --modal-type av --json_file test.json

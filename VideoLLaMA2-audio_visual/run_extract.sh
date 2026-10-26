@@ -1,0 +1,1 @@
+CUDA_VISIBLE_DEVICES=0 python videollama2/distill_ecr_rubric.py --model-path /workspace/LMM-EVQA/SnapUGC/videollama2_EVQA_weights_mse --json-file  test.json --modal-type av --top-k 30 --bottom-k 30 --out-dir ./rubric_out

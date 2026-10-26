@@ -181,7 +181,7 @@ def get_clip_timepoints(clip_sampler, duration):
         #print("AAAA")
     return all_clips_timepoints
 
-def load_audio_from_video(file: str, sr: int = 16000):
+def load_audio_from_video(file: str, sr: int = 16000, start: float = None, end: float = None):
     """
     Open an audio file and read as mono waveform, resampling as necessary
 
@@ -201,13 +201,19 @@ def load_audio_from_video(file: str, sr: int = 16000):
     # This launches a subprocess to decode audio while down-mixing
     # and resampling as necessary.  Requires the ffmpeg CLI in PATH.
 
-    cmd = ["ffmpeg", "-nostdin", "-i", file, "-vn",  # no video
+    cmd = ["ffmpeg", "-nostdin"]
+    if start is not None:
+        cmd.extend(["-ss", str(max(float(start), 0.0))])
+    if end is not None:
+        duration = max(float(end) - float(start or 0.0), 0.01)
+        cmd.extend(["-t", str(duration)])
+    cmd.extend(["-i", file, "-vn",  # no video
         "-acodec", "pcm_s16le",  # output audio codec (pcm_s16le for .wav)
         "-ac", "1",  # audio channels (1 for mono)
         "-ar", str(sr),  # audio sample rate
         "-f", "s16le",  # output format (s16le for 16-bit PCM)
         "-"  # output to stdout
-        ]
+        ])
     # fmt: on
     try:
         out = run(cmd, capture_output=True, check=True).stdout
@@ -216,12 +222,12 @@ def load_audio_from_video(file: str, sr: int = 16000):
     return np.frombuffer(out, np.int16).flatten().astype(np.float32) / 32768.0, sr
 
 
-def process_audio_from_video(audio_path, clip_duration, device="cpu", num_mel_bins=128, sample_rate=16000, clips_per_video=8, mean=-4.268, std=9.138):
+def process_audio_from_video(audio_path, clip_duration, device="cpu", num_mel_bins=128, sample_rate=16000, clips_per_video=8, mean=-4.268, std=9.138, start=None, end=None):
     clip_sampler = ConstantClipsPerVideoSampler(
         clip_duration=2, clips_per_video=clips_per_video
     )
     try:
-        waveform, sr = load_audio_from_video(audio_path)
+        waveform, sr = load_audio_from_video(audio_path, start=start, end=end)
     except Exception as audio_error:
         print(f"Failed to process audio from video due to error: {audio_error}")
         waveform = torch.zeros(480000)
@@ -328,7 +334,7 @@ def process_video(video_path, processor, s=None, e=None, aspect_ratio='pad', num
             clip_duration = min(num_frames, video_duration_seconds)
         else:
             clip_duration = video_duration_seconds
-        audio = process_audio_from_video(video_path, clip_duration)
+        audio = process_audio_from_video(video_path, clip_duration, start=s, end=e)
         video = {'video': video, 'audio': audio}
         
     return video

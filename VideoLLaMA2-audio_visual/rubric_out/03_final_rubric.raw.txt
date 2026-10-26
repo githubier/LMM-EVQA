@@ -1,0 +1,6 @@
+a modern and minimalist interior space with a large window and a minimalist decor. The sound of natural light and a soft background can be heard. The video is ideal for a calm and modern atmosphere.",
+      "expected ECR band": "high"
+    }
+  ]
+}
+```

@@ -1,0 +1,501 @@
+Id,ECR,raw_answer,ECR_gt,rubric_size,flow,score_source,aggregate,python_formula,fewshot,temporal_mode,temporal_windows,aggregate_with_dimensions
+84a017be6a152dc1de7f8d4b192fb21f,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止,9.49638035609469,5,direct,discrete,none,none,True,windowed,True,False
+fea2486cee5d0d8aa24d6312e652fde9,50.0,"ECR: 0.5; reason: Hook Strength=0, Narrative Progression=0, Visual Dynamism=0",97.94873801604382,5,direct,discrete,none,none,True,windowed,True,False
+912f5e8f906fe82417a0c95bfba55604,50.0,ECR: 0.5; reason: 无任何钩子且内容平淡,49.332028957151245,5,direct,discrete,none,none,True,windowed,True,False
+c474b35a5e673d1c1ac3c0e14a2d5189,50.0,ECR: 0.5; reason: 无任何钩子且内容平淡,77.40090001956564,5,direct,discrete,none,none,True,windowed,True,False
+d46c557ffaf41442b5610487b2854896,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止、无运动,0.9665427509293599,5,direct,discrete,none,none,True,windowed,True,False
+42f0adce627acf06e9fffd21080d2f94,50.0,ECR: 0.5; reason: 无任何钩子且画质一般,10.89180199569555,5,direct,discrete,none,none,True,windowed,True,False
+50cf112ec3205f93cc21a1fbef73c78e,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止，需要等待>3秒才理解意图,71.03737037761691,5,direct,discrete,none,none,True,windowed,True,False
+af868c11812e79e2faab088ecf70cacf,50.0,ECR: 0.5; reason: 无任何钩子且内容平淡。,60.39131285462728,5,direct,discrete,none,none,True,windowed,True,False
+11085d55a51374b582e605fabe3e4699,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止,84.17530815887302,5,direct,discrete,none,none,True,windowed,True,False
+bb8299a8f534df6a91b3b2d65930c6f7,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止、无运动,87.88495402073958,5,direct,discrete,none,none,True,windowed,True,False
+a27e357223557f5bae03ef7cf41a5cec,50.0,ECR: 0.5; reason: 无任何钩子且画质一般,64.73097241244375,5,direct,discrete,none,none,True,windowed,True,False
+9ca77d9866612293d56ea424a44772e1,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止、模糊、无动作或无明确主题。,82.67031891997652,5,direct,discrete,none,none,True,windowed,True,False
+2880682322b30bae00e9158f8f50575a,50.0,ECR: 0.5; reason: 无任何钩子且低级趣味,43.77225591860693,5,direct,discrete,none,none,True,windowed,True,False
+520385d28b7424a152cdd256fd0365a7,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止,63.90765016630796,5,direct,discrete,none,none,True,windowed,True,False
+a563abd9fd8262228dbc191cc0bca037,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止,67.45216200352182,5,direct,discrete,none,none,True,windowed,True,False
+6738685e7654b374df77b3bfd0951111,50.0,"ECR: 0.5; reason: low quality video, no clear hook, and no emotional resonance.",86.66014478575622,5,direct,discrete,none,none,True,windowed,True,False
+0e5a2cf0100d7d9e47cb3430a97eb072,50.0,ECR: 0.5; reason: 无钩子+静态画面,9.03619643905302,5,direct,discrete,none,none,True,windowed,True,False
+11f30fe8747260148531623ebf1ab61c,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止、模糊、无动作或无明确主题。,76.45705341420465,5,direct,discrete,none,none,True,windowed,True,False
+278049058e2326000c2ce0a10b1b69d5,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止,62.181177851692425,5,direct,discrete,none,none,True,windowed,True,False
+a5d125e882e73625b4831938ff07b40c,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止,74.91997652122873,5,direct,discrete,none,none,True,windowed,True,False
+8a1bd686cf24055768a72dde76638e82,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止、无运动,90.14595969477598,5,direct,discrete,none,none,True,windowed,True,False
+295d99d850a69c2674aaa9dbd4d29446,50.0,ECR: 0.5; reason: 无任何钩子且低级趣味,45.35863823126589,5,direct,discrete,none,none,True,windowed,True,False
+171cd938385a9e6ee467a4c822e43802,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止,26.22265701428292,5,direct,discrete,none,none,True,windowed,True,False
+7d8ce3d43d2af84ea61370af68a23e72,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止,80.57444727059284,5,direct,discrete,none,none,True,windowed,True,False
+597a217d1a277fe2daaaf3d5c6bdda95,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止、无运动、无变化,1.94012913324202,5,direct,discrete,none,none,True,windowed,True,False
+b11ea6b76ba5583dd05e6b7f16290b83,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止、模糊、无动作或无明确主题。,96.52905497945608,5,direct,discrete,none,none,True,windowed,True,False
+a994bebc9e378e1c35b90b8bbf7d2718,50.0,ECR: 0.5; reason: 无任何钩子且画面静态,46.595969477597336,5,direct,discrete,none,none,True,windowed,True,False
+70448a39ddc9e8705306810bdedcaca9,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止、无运动,13.122285267071021,5,direct,discrete,none,none,True,windowed,True,False
+911f488eb1d0f063b687dc4fe1522708,50.0,ECR: 0.5; reason: 无钩子+静态画面,68.09782821365683,5,direct,discrete,none,none,True,windowed,True,False
+1229a647b68551610bc9c6728b07f341,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止，需要等待>3秒才理解意图。,40.10174134220309,5,direct,discrete,none,none,True,windowed,True,False
+fe572416a98827fd2a8049cc4a07de87,50.0,ECR: 0.5; reason: 无任何钩子且内容平淡,81.71081980043044,5,direct,discrete,none,none,True,windowed,True,False
+269fe379a717dde76b608885e87a8624,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止、模糊、无动作或无明确主题。,66.33457249070632,5,direct,discrete,none,none,True,windowed,True,False
+f191b4f1f9d9d7c555f8c6e5407a204a,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止,89.47837996478184,5,direct,discrete,none,none,True,windowed,True,False
+1eaa24f5cc01e8bd47f90d3501a54518,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止,71.54216396008609,5,direct,discrete,none,none,True,windowed,True,False
+96742aa7c72ea25b5aca5224e32ca89f,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止,84.41087849735864,5,direct,discrete,none,none,True,windowed,True,False
+48607c07d3ffa478aa943eacf6a052a1,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止,72.72001565251418,5,direct,discrete,none,none,True,windowed,True,False
+0129f2ff578e34ae8b8ce709eaafe814,50.0,ECR: 0.5 ; reason: 无钩子+静态画面,42.48405400117394,5,direct,discrete,none,none,True,windowed,True,False
+6521f714d1278cdae5eba162cbfec123,50.0,ECR: 0.5; reason: 无钩子+静态画面,45.84777929954999,5,direct,discrete,none,none,True,windowed,True,False
+da3c287fe789083f6ab43c113e0e1de4,50.0,ECR: 0.5; reason: 无任何钩子且画质一般,5.28820191743298,5,direct,discrete,none,none,True,windowed,True,False
+1e013a74330cb8cc72a6dc54e964936e,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止,97.74134220309136,5,direct,discrete,none,none,True,windowed,True,False
+e61126d4c2b97b39a7349e1ad1d9de93,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止,32.87654079436509,5,direct,discrete,none,none,True,windowed,True,False
+03f8667fa85f18a1413a37076a3b61f2,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止、无运动,17.25220113480728,5,direct,discrete,none,none,True,windowed,True,False
+00c6e5ea4f2830a5d0277a3d3174d0e2,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止,22.15456857757777,5,direct,discrete,none,none,True,windowed,True,False
+46e5317fb485c32ad3dab4801df9a335,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止,83.13598121698298,5,direct,discrete,none,none,True,windowed,True,False
+00166a77a1e70dd0d73b88a6b7ce4af8,15.0,ECR: 0.15 ; reason: 无钩子+低质,59.45216200352181,5,direct,discrete,none,none,True,windowed,True,False
+c75613504828752f7e128d10f0653c3f,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止、无运动,43.51633731168068,5,direct,discrete,none,none,True,windowed,True,False
+839522a47845853bf5857d967e81a440,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止、模糊、无动作或无明确主题。,79.74016826452748,5,direct,discrete,none,none,True,windowed,True,False
+07a978b316f0dfab382652422d562dc5,50.0,ECR: 0.5; reason: 无钩子+静态画面,46.72118959107806,5,direct,discrete,none,none,True,windowed,True,False
+7a4a0d3378c7352a3123302e5f0e91b1,50.0,ECR: 0.5; reason: 无钩子+基础吸引力,99.77851692428096,5,direct,discrete,none,none,True,windowed,True,False
+908eedde125941c070740fe2446119a9,15.0,ECR: 0.15; reason: low quality and lack of visual hooks,0.43748777147329,5,direct,discrete,none,none,True,windowed,True,False
+05e63c33dd07e321ba0f1472b699ced9,50.0,ECR: 0.5; reason: 无任何钩子且前3秒为静止、模糊、无动作或无明确主题。,49.057327333202885,5,direct,discrete,none,none,True,windowed,True,False
+14b93dce7fd637b5a759664c62fc6575,50.0,ECR: 0.5; reason: 无任何钩子且静态画面,55.47564077479945,5,direct,discrete,none,none,True,windowed,True,False
+4575be1348cf5c1e5c06e078443ef367,50.0,ECR: 0.5; reason: 有钩子但不清晰,38.59283897476032,5,direct,discrete,none,none,True,windowed,True,False
+b6323696a14ca3a4244654390be18cfa,50.0,ECR: 0.5; reason: 无任何钩子且内容平淡,0.63470945020543,5,direct,discrete,none,none,True,windowed,True,False
+25a4bcf89903848c855157e275850b2f,50.0,ECR: 0.5 ; reason: 无任何钩子且前3秒静止、模糊、无动作或无明确主题。,18.13265505771864,5,direct,discrete,none,none,True,windowed,True,False
+30ed7409c461aa20322c3a593df96841,50.0,ECR: 0.5; reason: 无任何钩子且画质一般,72.17843866171005,5,direct,discrete,none,none,True,windowed,True,False
+235ed1655238a853e4af52b1701791af,50.0,ECR: 0.5; reason: 无钩子+静态画面,45.42124828800626,5,direct,discrete,none,none,True,windowed,True,False
+b07365573caacf84b8a206397ac91f4f,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止,10.61240461749168,5,direct,discrete,none,none,True,windowed,True,False
+ecd555bb9735f188b31e0e560cd85c1f,50.0,ECR: 0.5; reason: 无任何钩子且静态画面,81.32107219722168,5,direct,discrete,none,none,True,windowed,True,False
+634901c98bb296d940a24f09853704f6,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止,34.422226570142826,5,direct,discrete,none,none,True,windowed,True,False
+3df0ca18ddd484e81015d80854d46d69,15.0,"ECR: 0.15; reason: low quality video, no clear hook, no emotional resonance",43.81999608687145,5,direct,discrete,none,none,True,windowed,True,False
+dbcec5845eca9575f642822426566217,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止,12.629231070240651,5,direct,discrete,none,none,True,windowed,True,False
+5aa3ace13b9049e1679593fc2f296891,50.0,ECR: 0.5; reason: 无任何钩子且画质一般,13.81256114263353,5,direct,discrete,none,none,True,windowed,True,False
+ff551fcbae730d05c54451d1f58a9447,50.0,ECR: 0.5; reason: 无任何钩子且画质一般,75.38955194678145,5,direct,discrete,none,none,True,windowed,True,False
+0ebfc7bc65e47cb2113066cc2d01b393,50.0,ECR: 0.5; reason: 无钩子+静态画面,59.198591273723345,5,direct,discrete,none,none,True,windowed,True,False
+86e2ee9237ef531767df33221d48e151,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止,44.3701819604774,5,direct,discrete,none,none,True,windowed,True,False
+a0d23a1fa6e7226798f49f09c78b2e75,50.0,ECR: 0.5; reason: 无任何钩子且画质一般,42.88162786147525,5,direct,discrete,none,none,True,windowed,True,False
+148f560d3356af7ba1ede2f3a35881c6,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止、无运动,6.34631187634513,5,direct,discrete,none,none,True,windowed,True,False
+a83944878e7d82ca09056ddd17a6a6a6,50.0,"ECR: 0.5; reason: The video shows two men playing a game of darts in a room. The main source of sound in the video is the sound of the darts hitting the dartboard. The video also features a trickshot golf video, which is not visible in the current frame.",70.82136568186264,5,direct,discrete,none,none,True,windowed,True,False
+1c7246956e9717058545665a3c059aa4,50.0,"ECR: 0.5; reason: Hook Strength=0, Visual Dynamism=0, Narrative Progression=0",76.68166699276071,5,direct,discrete,none,none,True,windowed,True,False
+1088ca034ada28f1447cbdc0c1959c21,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止,76.44531402856583,5,direct,discrete,none,none,True,windowed,True,False
+043200e928050eb2152c2c47bf89bd31,50.0,"ECR: 0.5; reason: The video starts with a man holding a phone and a drink in his hand. The man is then seen using the phone while driving, which could lead to distracted driving and potentially cause an accident. The video also shows a person holding a white straw in their hand while driving, which could be a sign of reckless behavior. Additionally, there is a shot of a person holding a white cord in their hand while driving, which could indicate that they are using a phone charger while driving, further increasing the risk of distraction.",64.93210721972217,5,direct,discrete,none,none,True,windowed,True,False
+902b5dc5fb58632757de6dcbdcd59655,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止,65.61142633535512,5,direct,discrete,none,none,True,windowed,True,False
+586d5f5719e7ea92e8dbfe712bb49bde,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止、模糊、无动作或无明确主题。,17.78595186851888,5,direct,discrete,none,none,True,windowed,True,False
+aa73d6941c64dcce67400ae3358bbaf0,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止、模糊、无动作或无明确主题。,73.5237722559186,5,direct,discrete,none,none,True,windowed,True,False
+8c6505e10c2c0cdf37f38c0e14a92da3,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止、模糊、无动作或无明确主题。,36.33809430639796,5,direct,discrete,none,none,True,windowed,True,False
+897e449977a7aff8c9ab887f94c3d115,50.0,ECR: 0.5; reason: 无任何钩子且静态画面,74.46370573273332,5,direct,discrete,none,none,True,windowed,True,False
+5dc875bdfee5bf3fcd599f5acfb9d885,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止,12.64723146155351,5,direct,discrete,none,none,True,windowed,True,False
+2654ec5e945669fb86a6ef4892d85376,50.0,"ECR: 0.5; reason: The video starts with a question, ""Lamborghini or supercharged Mustang?"", which immediately piques the viewer's curiosity about the car on the road.",72.3185286636666,5,direct,discrete,none,none,True,windowed,True,False
+638c9445bb9d2f2f16c7201bb987334c,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止、模糊、无动作,13.936216004695751,5,direct,discrete,none,none,True,windowed,True,False
+6de601228cca33884564b7421365b8ce,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止,58.72197221678732,5,direct,discrete,none,none,True,windowed,True,False
+05de7eefb3a9c670e62b83653e54cc62,50.0,ECR: 0.5; reason: 无任何钩子且低级趣味,78.34396399921737,5,direct,discrete,none,none,True,windowed,True,False
+b9841ad85167172bc26bd66b1a44ac0f,50.0,ECR: 0.5; reason: 无钩子+静态画面,84.93758559968695,5,direct,discrete,none,none,True,windowed,True,False
+53ffe317b3aef4f252a879d2ddcff282,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止、模糊、无动作或无明确主题。,40.54705537076893,5,direct,discrete,none,none,True,windowed,True,False
+a861544e3d3cbefa1d06e12b7492597a,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止、模糊、无动作,0.0,5,direct,discrete,none,none,True,windowed,True,False
+3a522cf4501acdbd9b77c0c5d1c0df58,50.0,ECR: 0.5; reason: 无任何钩子且低级运动,49.70690667188417,5,direct,discrete,none,none,True,windowed,True,False
+5160d4ed0ba4935549c8e0387617672c,50.0,ECR: 0.5; reason: 无任何钩子且画质一般,6.865192721580899,5,direct,discrete,none,none,True,windowed,True,False
+58763dada6d15585c28853f37b02004e,50.0,ECR: 0.5; reason: 无任何钩子且内容平淡,92.22304832713756,5,direct,discrete,none,none,True,windowed,True,False
+b9474413c72206bae83a913f8a03514e,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止,44.7403639209548,5,direct,discrete,none,none,True,windowed,True,False
+0846e64063159c497a36e30c74059b93,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止,56.5580121306985,5,direct,discrete,none,none,True,windowed,True,False
+0f4581bde493286ecb29522cd8e24b5e,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止、模糊、无动作或无明确主题。,69.9956955585991,5,direct,discrete,none,none,True,windowed,True,False
+4f314d64f937018a061d5ef938ecad72,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止,35.37702993543338,5,direct,discrete,none,none,True,windowed,True,False
+0f73a253a5185acfcb712fae31acf0b4,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止,8.26609274114654,5,direct,discrete,none,none,True,windowed,True,False
+1fc61c02c2ce27c80d7f3da75e4fb6bf,50.0,ECR: 0.5; reason: 无任何钩子且内容平淡,34.58344746624927,5,direct,discrete,none,none,True,windowed,True,False
+6242774cb120e1f947096d396be9f12d,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止、无运动,53.01741342203091,5,direct,discrete,none,none,True,windowed,True,False
+6e031b417a90e2dfbbd88fdd3a68a5f4,50.0,ECR: 0.5 ; reason: 无任何钩子且内容平淡,94.03482684406184,5,direct,discrete,none,none,True,windowed,True,False
+fc2920c57b8d28ea571573b31e9eb0d8,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止,4.33183330072392,5,direct,discrete,none,none,True,windowed,True,False
+7fe38a8abe73f8cf2b0a62bf613747c7,50.0,"ECR: 0.5; reason: The video starts with a truck driver working on the tractor trailer's electric line, which is smoking up. The scene is static and there are no other visual or audio cues to indicate the start of the video. Therefore, it is difficult to determine the engagement level of the video at this point.",58.660927411465465,5,direct,discrete,none,none,True,windowed,True,False
+31a8f54f1d8708f0e8b350f95e53d208,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止，需要更长时长才能理解内容。,30.07004500097828,5,direct,discrete,none,none,True,windowed,True,False
+409de537a79fd6637f6b4862b0233c1f,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止,7.1500684797495495,5,direct,discrete,none,none,True,windowed,True,False
+825ac0c8d2d4bfb07ddf28d318a3b9f4,50.0,"ECR: 0.5; reason: Hook Strength=0.5 (emoticon), Visual Dynamism=0, Narrative Progression=0",79.56329485423596,5,direct,discrete,none,none,True,windowed,True,False
+7a5f0a47e618313ce2c5fbb65b30d460,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止,44.35687732342007,5,direct,discrete,none,none,True,windowed,True,False
+cedd545e12fd4ec8775cfc84a31dc306,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止,86.44492271571121,5,direct,discrete,none,none,True,windowed,True,False
+8b2d1544e2f76121311f84f81efd10d6,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止、模糊、无动作或无明确主题。,8.0258266484054,5,direct,discrete,none,none,True,windowed,True,False
+9c4b226ceae49a45904b2d94d3b29373,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止、无运动,45.13402465270984,5,direct,discrete,none,none,True,windowed,True,False
+4366afcaa76ef33cb6052e871c01a414,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止,75.54059870866759,5,direct,discrete,none,none,True,windowed,True,False
+8eb93e1f4363efe41046ad419f0049c3,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止、无运动,77.77029935433379,5,direct,discrete,none,none,True,windowed,True,False
+078d05e8672e8d8037dfe6775688711d,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止、无运动,30.581099589121504,5,direct,discrete,none,none,True,windowed,True,False
+44096ba233172b1c473b7f851ab5d6d5,50.0,ECR: 0.5; reason: 无任何钩子且画质一般,37.886127959303465,5,direct,discrete,none,none,True,windowed,True,False
+27bfae96fb02478028d9faad0f0568c5,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止,69.60673058109958,5,direct,discrete,none,none,True,windowed,True,False
+00a9b8cf881144851b1a04036a9c16a9,50.0,ECR: 0.5; reason: 无任何钩子且画质一般,34.607708863236155,5,direct,discrete,none,none,True,windowed,True,False
+afc78b5970237989a6977756d12b9db0,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止、无运动,57.80395225983174,5,direct,discrete,none,none,True,windowed,True,False
+f7ab9454073f1962df64aabfbbe678d2,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止、无运动,22.7618861279593,5,direct,discrete,none,none,True,windowed,True,False
+69fa6072da1b0ca8d8bb03584de27e19,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止,51.72842887888868,5,direct,discrete,none,none,True,windowed,True,False
+9cbe488b6fbff14db3f5fd40e099a658,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止,4.2160046957542505,5,direct,discrete,none,none,True,windowed,True,False
+459a14fbbf84ba3dcebb314e05f283de,50.0,ECR: 0.5; reason: 无钩子+静态画面,60.745059675210335,5,direct,discrete,none,none,True,windowed,True,False
+fe1d04e615ee2c9f63e61a12e11e9f86,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止、模糊、无动作或无明确主题。,93.64664449227156,5,direct,discrete,none,none,True,windowed,True,False
+b53a5132ed465157e4c27dfc3945dff8,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止、模糊、无动作或无明确主题,29.07141459596948,5,direct,discrete,none,none,True,windowed,True,False
+f3922ae90698ae49c626f221ad094bd5,50.0,ECR: 0.5; reason: 无钩子+基础吸引力,82.37135589904129,5,direct,discrete,none,none,True,windowed,True,False
+d9db2582ef82e4b0f8321fdc3837f4bb,50.0,"ECR: 0.5; reason: There is no clear visual or textual hook in the first 5 seconds of the video. The scene shows a person holding back tears, but it is not immediately clear why they are crying. The video then cuts to a man holding his hands up in the air, which may suggest a moment of triumph or frustration. However, without further context, it is difficult to determine the exact emotional state of the person in the video.",79.98826061436118,5,direct,discrete,none,none,True,windowed,True,False
+3758c6d89f2e13255339961f1af9e86e,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止,3.4983369203678296,5,direct,discrete,none,none,True,windowed,True,False
+e77dba90ac783aa517cbdbe53ec3737b,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止、模糊、无动作或无明确主题。,3.42320485227939,5,direct,discrete,none,none,True,windowed,True,False
+6c53b9d52cfc13b6690504a4856ad219,50.0,ECR: 0.5; reason: 无任何钩子且内容平淡,79.11954607708863,5,direct,discrete,none,none,True,windowed,True,False
+bf27d22aeedad6a165cf2199df74a3e8,50.0,ECR: 0.5; reason: 有钩子但不清晰,41.02758755625122,5,direct,discrete,none,none,True,windowed,True,False
+845b31da925770f7a166529a673d616e,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止,36.94149872823322,5,direct,discrete,none,none,True,windowed,True,False
+3aacfb04d0a2eee75a95147fab1e3b03,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止、无运动,12.49383682253962,5,direct,discrete,none,none,True,windowed,True,False
+23e4bc603d2022360c9054e2dbba599a,50.0,ECR: 0.5; reason: 无任何钩子且信息量不足,17.274897280375658,5,direct,discrete,none,none,True,windowed,True,False
+2e5f9f1ec1341183af4e8d38c7a68bc2,50.0,ECR: 0.5; reason: 无任何钩子、技术层面一般，且内容不违反平台政策。,69.4650753277245,5,direct,discrete,none,none,True,windowed,True,False
+d51c04050e449f9c82e2204dd1940711,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止，需要更长时长理解内容,92.30835452944628,5,direct,discrete,none,none,True,windowed,True,False
+0d03d76eb7908ba62f0f0652315af7c2,15.0,"ECR: 0.15; reason: The video starts with a plane running out of fuel and crashing in the field. The pilot's voice can be heard saying, ""We're running out of fuel."" The scene then cuts to a small tower with a large crane on top of it, and then to a video game scene where a plane is flying through the air. The final shot shows a plane flying over a city with the words ""cancellation tower clearance"" appearing on the screen. The video ends with a shot of a plane flying through the air with the words ""airplane crashes in field"" appearing on the screen.",62.592838974760326,5,direct,discrete,none,none,True,windowed,True,False
+11c9c291ad2c63269d09411f30810e1d,50.0,ECR: 0.5; reason: 无任何钩子且画质一般,92.16513402465272,5,direct,discrete,none,none,True,windowed,True,False
+90c0190a769cd2afaeaa0ab97c221b0a,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止、模糊、无动作或无明确主题。,25.783603991391118,5,direct,discrete,none,none,True,windowed,True,False
+f0112bc95eb0da723fab6ba208cd3b23,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止、模糊、无动作或无明确主题。,77.40011739385639,5,direct,discrete,none,none,True,windowed,True,False
+7583377445f3e8d7ea1287bc1d1f94f5,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止,9.088632361573069,5,direct,discrete,none,none,True,windowed,True,False
+6970c2bfb1132632eaec2b88908c7593,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止,47.899823909215414,5,direct,discrete,none,none,True,windowed,True,False
+896511012b7b2b812c33fcbfd461cc46,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止,12.27391899823909,5,direct,discrete,none,none,True,windowed,True,False
+e96716c9424050c7d8107416459033af,50.0,ECR: 0.5; reason: 无钩子+静态画面,74.26726667971043,5,direct,discrete,none,none,True,windowed,True,False
+5b10c887f3ad38ac28ce22c8ef9f921c,50.0,ECR: 0.5; reason: 无任何钩子且内容平淡,16.992369399334763,5,direct,discrete,none,none,True,windowed,True,False
+bcba5b8d5d49777a7fdc1058c12c09d8,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止、无运动,37.844648796712974,5,direct,discrete,none,none,True,windowed,True,False
+7c66e8b176335ca86e6f3272a33700cb,50.0,ECR: 0.5; reason: 无任何钩子且内容平淡,16.44140090001956,5,direct,discrete,none,none,True,windowed,True,False
+106bb217c351b2b497cb5433143f50d0,50.0,ECR: 0.5; reason: 无任何钩子且节奏慢,29.65525337507337,5,direct,discrete,none,none,True,windowed,True,False
+8806b9de131289251fc768d06c3fde2e,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止,19.88573664644883,5,direct,discrete,none,none,True,windowed,True,False
+0a5fd3f2ae67d5523e176fad0a694268,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止、无运动,60.71140676971238,5,direct,discrete,none,none,True,windowed,True,False
+f26d727dde7a450fa9088c0b6bedc242,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止,22.700058696928192,5,direct,discrete,none,none,True,windowed,True,False
+dde6676797ddaa8f653863d1529007f3,50.0,ECR: 0.5; reason: 无钩子+静态画面,46.7532772451575,5,direct,discrete,none,none,True,windowed,True,False
+16bd65a85e1abf94335d3cb79772dd1a,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止、模糊、无动作或无明确主题。,66.4175308158873,5,direct,discrete,none,none,True,windowed,True,False
+597de7fec0914e97a713d1f028a0f241,15.0,"ECR: 0.15; reason: The video starts with a dog sitting in a car, but there is no visual or audio hook to draw the viewer in. The scene is static and unchanging, which may cause boredom or disinterest.",48.89297593425944,5,direct,discrete,none,none,True,windowed,True,False
+9ebfb27467445c146b4f757b57266b0e,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止,30.61396986891019,5,direct,discrete,none,none,True,windowed,True,False
+f60b4d22c407dd04119cccef4a4a0eb7,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止、无运动,92.31383290941108,5,direct,discrete,none,none,True,windowed,True,False
+30a763ddee52ef3a766df78cbaf892eb,50.0,ECR: 0.5; reason: 有钩子但不清晰,48.54940324789669,5,direct,discrete,none,none,True,windowed,True,False
+1db0417aac3858ac1926defaeb060e0c,50.0,ECR: 0.5 ; reason: 无任何钩子且静态画面,34.411269810213255,5,direct,discrete,none,none,True,windowed,True,False
+546ae7f99ef6841c069dd66b3b674a68,50.0,ECR: 0.5; reason: 无钩子+静态画面,26.036392095480338,5,direct,discrete,none,none,True,windowed,True,False
+2ab6104b46eb114fe3ea6f4c12087fa3,50.0,"ECR: 0.5; reason: The video starts with a question ""Why do girls always say 'whatever'?"" and then shows a girl saying the same word while holding a green ball. The video then cuts to a person dancing on a skateboard in a green room, followed by two women standing on a roof with one holding a green alien. There is no clear narrative or emotional resonance in this video segment, and the production quality is average.",33.92917237331246,5,direct,discrete,none,none,True,windowed,True,False
+0be82e2aeca8209f8e33ba187340e7f8,50.0,ECR: 0.5; reason: 无任何钩子且节奏慢,10.055957738211701,5,direct,discrete,none,none,True,windowed,True,False
+e0a6885b714357bcc2691f566c80ccb7,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止、模糊、无动作或无明确主题。,96.83584425748386,5,direct,discrete,none,none,True,windowed,True,False
+0ef3fd4be98000d3202458916c6a47bb,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止、模糊、无动作或无明确主题。,93.69829778908236,5,direct,discrete,none,none,True,windowed,True,False
+d85b10d916d110584b98de7d5c297f2c,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止、模糊、无动作或无明确主题。,92.90549794560752,5,direct,discrete,none,none,True,windowed,True,False
+e8eb0f22399f61beaa70515a59ae9543,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止、无运动。,86.00352181569164,5,direct,discrete,none,none,True,windowed,True,False
+4d7064ac3d7571194068742ed69dbf9e,50.0,ECR: 0.5; reason: 无任何钩子且内容平淡,60.96967325376639,5,direct,discrete,none,none,True,windowed,True,False
+6cf698b41a6bbf7cdb8b5f2cb7fc538f,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止、无运动,82.05674036392095,5,direct,discrete,none,none,True,windowed,True,False
+607f1a8d3458f40edd8ce1cb3064be87,15.0,ECR: 0.15 ; reason: 无任何钩子、静态画面、无情绪,50.75797299941303,5,direct,discrete,none,none,True,windowed,True,False
+e09ca35ae01a5e39fe9c17f45bb9a52f,50.0,ECR: 0.5; reason: 无任何钩子且低级趣味,28.48053218548229,5,direct,discrete,none,none,True,windowed,True,False
+2338a68254a6331d441507585238f9f4,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止、模糊、无动作或无明确主题。,96.07278419096068,5,direct,discrete,none,none,True,windowed,True,False
+d05ee4b99b45cc8a3da98352cc02fe92,50.0,"ECR: 0.5; reason: The video starts with a question and a desire to appreciate the beauty of the eyes, but there is no visual or audio hook to draw the viewer in.",13.72647231461553,5,direct,discrete,none,none,True,windowed,True,False
+6c9fc58c3ad4d1731977022aca29559c,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止,92.57053414204655,5,direct,discrete,none,none,True,windowed,True,False
+a4bb9b4dbc3e34649bea4ee68c7a709f,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止,55.75660340442183,5,direct,discrete,none,none,True,windowed,True,False
+59fcdcd06fc994ca3cc7351697253f71,15.0,ECR: 0.15 ; reason: 无任何钩子、悬念、或情绪，且前3秒静止、无运动。,64.1823517902563,5,direct,discrete,none,none,True,windowed,True,False
+ef92f8adf649973b1a341e7e4ca2a802,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止、模糊、无动作或无明确主题。,1.6552533750733698,5,direct,discrete,none,none,True,windowed,True,False
+8a3ebbbc5ffdbdd336b0916ba8798145,50.0,ECR: 0.5; reason: 无钩子+静态画面,22.06926237526902,5,direct,discrete,none,none,True,windowed,True,False
+c0121046f11b8a1e6bf5bf83d2f4b5ee,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止、无运动,19.97417335159459,5,direct,discrete,none,none,True,windowed,True,False
+2d96dcff2127d6572a62724a7395dfcd,50.0,ECR: 0.5; reason: 无任何视觉/文本钩子，前3秒静止、模糊、无动作或无明确主题。,70.99041283506163,5,direct,discrete,none,none,True,windowed,True,False
+9c210dede6a82f077ab0bbaedea3cf90,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止、模糊、无动作或无明确主题。,97.74525533163764,5,direct,discrete,none,none,True,windowed,True,False
+a454341212825c3d06b607473432753e,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止、无运动,6.67031891997652,5,direct,discrete,none,none,True,windowed,True,False
+94e53c9a1392369fa6a00f8b40f5fd0c,50.0,ECR: 0.5; reason: 无钩子+静态画面,79.23224417922128,5,direct,discrete,none,none,True,windowed,True,False
+83bca31e7a61b8ef5a64ded5d48926a6,50.0,ECR: 0.5; reason: 无任何钩子且内容平淡,80.48601056544707,5,direct,discrete,none,none,True,windowed,True,False
+977a1318261f75ae2cff60d5559ae7f0,50.0,ECR: 0.5; reason: 无任何钩子且画质一般,93.49011935042067,5,direct,discrete,none,none,True,windowed,True,False
+17be2a718ff2dd35815d00635761a23e,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止、模糊、无动作或无明确主题。,19.52729407161025,5,direct,discrete,none,none,True,windowed,True,False
+cd3126298e5011c214b2366609b6e596,50.0,"ECR: 0.5; reason: low quality video with no clear hook or emotional resonance, and a simple visual dynamism.",18.41361768734103,5,direct,discrete,none,none,True,windowed,True,False
+0c28cc7d0b1fb38c61029486f1d7a4a2,50.0,ECR: 0.5; reason: 有钩子但不清晰,80.34513793778125,5,direct,discrete,none,none,True,windowed,True,False
+982feec6fe0d71194258ea250033f126,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止,85.30072392878107,5,direct,discrete,none,none,True,windowed,True,False
+3a0d0ab8f5064db082535e77ec78b603,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止,96.45470553707688,5,direct,discrete,none,none,True,windowed,True,False
+318016d2c8ef3d26163ebdb397a6644d,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止、无运动,21.98473879866953,5,direct,discrete,none,none,True,windowed,True,False
+1e34d4c1692a36948f98563069742412,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止,68.7818430835453,5,direct,discrete,none,none,True,windowed,True,False
+5d3182d8e54f1e0ce42f92de6f223bb1,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止,66.75640774799452,5,direct,discrete,none,none,True,windowed,True,False
+b60ce7a79861c7968559f8506a465b52,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止,29.899432596360793,5,direct,discrete,none,none,True,windowed,True,False
+1d939bd976f75dfe4eaa7e500323d645,50.0,ECR: 0.5; reason: 无钩子+静态画面,15.16337311680688,5,direct,discrete,none,none,True,windowed,True,False
+243b0b80b82e1f5ad32bd2cf4f724719,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止,68.71375464684016,5,direct,discrete,none,none,True,windowed,True,False
+f6810d4d85a542fc0c38c135ac8f06b0,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止、无运动,23.84425748385834,5,direct,discrete,none,none,True,windowed,True,False
+e849a4beca39c43521d98d060710809f,50.0,"ECR: 0.5; reason: low quality video, no clear hook, and no emotional resonance.",92.05008804539227,5,direct,discrete,none,none,True,windowed,True,False
+86eb35e9ffe55ca3eaccf9bc85a7e60f,50.0,"ECR: 0.5; reason: Hook Strength=0, Visual Dynamism=0, Narrative Progression=0",44.68323224417922,5,direct,discrete,none,none,True,windowed,True,False
+cef1d6c93cb73bd98bf1da6111085e9b,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止、模糊、无动作或无明确主题,35.84582273527685,5,direct,discrete,none,none,True,windowed,True,False
+c3e4d76ace65cc925443d74cddc786e8,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止,41.249070631970255,5,direct,discrete,none,none,True,windowed,True,False
+a8dbb7c8280fd23fe053d4d26b9c9d4e,50.0,ECR: 0.5; reason: 无任何钩子且画质一般,23.730776756016432,5,direct,discrete,none,none,True,windowed,True,False
+0632832a3cd9b6c62aa3329bb5840cc9,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止、模糊、无动作或无明确主题。,41.51203287027979,5,direct,discrete,none,none,True,windowed,True,False
+f8988685d51a4dde15ded0846dd2bc09,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止、模糊、无动作或无明确主题。,59.2784190960673,5,direct,discrete,none,none,True,windowed,True,False
+54e3a2684c7e207af1310342f0d4a1b8,50.0,"ECR: 0.5; reason: Hook Strength=0, Visual Dynamism=0, Narrative Progression=0",46.66092741146547,5,direct,discrete,none,none,True,windowed,True,False
+489ad5a4ea77780cc5e9e2fd9f003129,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止、无运动,12.48522793973782,5,direct,discrete,none,none,True,windowed,True,False
+5a116c53f33b705137b72d047c38af22,50.0,ECR: 0.5; reason: 无钩子+静态画面,99.24867931911564,5,direct,discrete,none,none,True,windowed,True,False
+98abed12de4a38ed6ee599d00412fa31,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止,93.67403639209549,5,direct,discrete,none,none,True,windowed,True,False
+aa857f534be00bfcb22476284f049651,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止、无运动,37.81960477401682,5,direct,discrete,none,none,True,windowed,True,False
+d86d11e530a17b7aa3565e0734afe163,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止、模糊、无动作或无明确主题。,49.90412835061631,5,direct,discrete,none,none,True,windowed,True,False
+223a56758ee9231b0213b488c3a194e6,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止,59.56407747994522,5,direct,discrete,none,none,True,windowed,True,False
+6b57712ef9f6192da6fc38e9d1463166,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止,65.92447661905693,5,direct,discrete,none,none,True,windowed,True,False
+f3cbc96b8f49caffe4e0b03b8f634884,50.0,ECR: 0.5; reason: 无任何钩子且静态画面,28.80219135198591,5,direct,discrete,none,none,True,windowed,True,False
+e4042bb6587a53e5adcc764d4d56847c,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止、无运动,11.548424965760121,5,direct,discrete,none,none,True,windowed,True,False
+d4ab127dca91d46eba7036dc1a0fd8c1,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止,28.00156525141851,5,direct,discrete,none,none,True,windowed,True,False
+98158d7efbbea43692e429e82b1d992b,50.0,"ECR: 0.5; reason: The video starts with a can of Mountain Dew sitting on a counter, which is an unexpected object in a can. The man in the video then shows himself holding a can of Mountain Dew and taking a drink, suggesting that he is not supposed to be drinking from a can.",49.64820974369008,5,direct,discrete,none,none,True,windowed,True,False
+7e451bc932047fe053f0bfd96f580771,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止,93.46742320485228,5,direct,discrete,none,none,True,windowed,True,False
+decea275eae870507fb274cc668a16a7,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止,23.0890236744277,5,direct,discrete,none,none,True,windowed,True,False
+8fecc977224003e989fad0d5adebd353,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止、模糊、无动作或无明确主题。,73.10585012717668,5,direct,discrete,none,none,True,windowed,True,False
+80e2c34632b50ac4dc834ae3cc784c26,50.0,"ECR: 0.5; reason: The video shows a person wearing camouflage holding a camera, and a deer with antlers standing in the woods. There is also a red deer with antlers standing in the woods, and another red deer with antlers yawning. The video seems to be focused on wildlife photography, and the caption suggests that it was taken during the rutting season.",47.62903541381334,5,direct,discrete,none,none,True,windowed,True,False
+29c7409efa98671e61ffb08f70f71627,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止,91.741733515946,5,direct,discrete,none,none,True,windowed,True,False
+231fb158846f8f25edbc8b94120458ba,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止,63.92878106045784,5,direct,discrete,none,none,True,windowed,True,False
+16b996981d82ba223fa5a62424f8d238,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止、模糊、无动作或无明确主题。,75.55859909998044,5,direct,discrete,none,none,True,windowed,True,False
+549cee00c537da01be1506e386bead62,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止,97.549598904324,5,direct,discrete,none,none,True,windowed,True,False
+9df726e9c83235413112fc3d4c103ec5,50.0,"ECR: 0.5; reason: The video starts with a girl with red hair looking at the camera with a smile and heart-eyes expression. There is no other visual or audio hook to suggest a strong narrative or emotional resonance. The production quality is average, with clear audio and video, but no notable technical or creative elements to enhance the score.",9.37585599686949,5,direct,discrete,none,none,True,windowed,True,False
+b17a020ec6e66505379db1f8ab3c85b2,50.0,ECR: 0.5 ; reason: 无任何钩子且前3秒静止,8.71218939542163,5,direct,discrete,none,none,True,windowed,True,False
+b7cc65e6ce664b782235e9f0121fe36e,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止、模糊、无动作或无明确主题。,90.85110545881432,5,direct,discrete,none,none,True,windowed,True,False
+29c28bf1c1744b9a989f62b62d659450,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止、模糊、无动作或无明确主题。,35.68773234200743,5,direct,discrete,none,none,True,windowed,True,False
+59f848ae051cb2528dc574584ad0fc17,50.0,"ECR: 0.5; reason: The video shows a woman in a blue shirt holding a water bottle and running on the grass. There is no clear visual hook or narrative progression in the first few seconds, and the production quality is average. However, the text on the wall suggests that this is a footballer's practice, which may be of interest to some viewers.",68.1964390530229,5,direct,discrete,none,none,True,windowed,True,False
+d0e81a797eb25a4fd1d23837bf5cb08c,50.0,"ECR: 0.5; reason: The video starts with a pair of glasses on a table, which is the only visual element in the frame. There is no other context or narrative to provide a hook for the viewer.",31.7174721189591,5,direct,discrete,none,none,True,windowed,True,False
+a67fd02ece4b972cfb98484ca1489fed,50.0,ECR: 0.5; reason: 无任何钩子且画质一般,69.66777538642145,5,direct,discrete,none,none,True,windowed,True,False
+3a21b546925d6d43b118112d98ebdce3,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止、无运动,38.01682645274897,5,direct,discrete,none,none,True,windowed,True,False
+efdb034b510c38fc08e10b3f2ce9fa41,50.0,ECR: 0.5; reason: 无任何钩子且节奏慢,72.54314224222266,5,direct,discrete,none,none,True,windowed,True,False
+0ce12d0ffa47687e0aad82f39d5c00c4,50.0,"ECR: 0.5; reason: Hook Strength=0, Visual Dynamism=0, Narrative Progression=0",8.2840931324594,5,direct,discrete,none,none,True,windowed,True,False
+61d137fe91b21b51d5ee15adf092ed1f,50.0,ECR: 0.5; reason: 无钩子+静态画面,66.32439835648601,5,direct,discrete,none,none,True,windowed,True,False
+2c9d44be489837cba520b1182d79ab5f,50.0,ECR: 0.5; reason: 无任何钩子且内容平淡,78.2539620426531,5,direct,discrete,none,none,True,windowed,True,False
+586e1abfe33e3f1d9931384ebd623072,50.0,"ECR: 0.5; reason: Hook Strength=0, Visual Dynamism=0, Narrative Progression=0",97.83760516532968,5,direct,discrete,none,none,True,windowed,True,False
+d929b50e5346568e7b1c154bab31f0f8,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止、模糊、无动作或无明确主题。,90.10135002934845,5,direct,discrete,none,none,True,windowed,True,False
+16e7adee259f8212ad6ba1759488c5f3,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止,0.36705145764038,5,direct,discrete,none,none,True,windowed,True,False
+0a0f424e153eba82a14e0fa92167b510,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止、无运动,51.648601056544706,5,direct,discrete,none,none,True,windowed,True,False
+c0576cc8d0bc20f95e022228710f76a2,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止,5.59733907258853,5,direct,discrete,none,none,True,windowed,True,False
+0fe6513a0cf1ce0f8b57c2c6f0cb0046,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止,39.72764625317941,5,direct,discrete,none,none,True,windowed,True,False
+07aac4efc29b8ea34fb9475353e2955b,50.0,ECR: 0.5; reason: 无任何钩子且内容平淡,7.44824887497554,5,direct,discrete,none,none,True,windowed,True,False
+a92e6d872ba2dbc9d63ced95fd5cf013,50.0,ECR: 0.5; reason: 有钩子但不清晰,59.924085306202315,5,direct,discrete,none,none,True,windowed,True,False
+2d7089643f22733de3213e2919691a74,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止,12.31618078653883,5,direct,discrete,none,none,True,windowed,True,False
+84576c2b788b1d65ee1f7d68a85486b5,50.0,"ECR: 0.5; reason: The title is not visible, and the video only shows a sign that says ""the future is here"" with the image of a person on it. There is no other visual or auditory evidence to score the video's ECR.",22.01526120133046,5,direct,discrete,none,none,True,windowed,True,False
+4a37dd1307e6518b1a58d9b97cf3c402,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止,80.29191938955195,5,direct,discrete,none,none,True,windowed,True,False
+065f46d38ae5f1b7439b618d10bde64b,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止、无运动,19.62355703384856,5,direct,discrete,none,none,True,windowed,True,False
+d422886f123cf2701b0463141bb4387c,15.0,"ECR: 0.15 ; reason: Hook Strength=0, Visual Dynamism=0, Narrative Progression=0",77.40950890236743,5,direct,discrete,none,none,True,windowed,True,False
+d4e76ff01a8054ec40c40fb5e805b9bd,50.0,ECR: 0.5; reason: 无任何钩子且低级趣味,89.56994717276463,5,direct,discrete,none,none,True,windowed,True,False
+ae72b8c599e0a4506f761252635ed470,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止、模糊、无动作或无明确主题。,77.66542750929368,5,direct,discrete,none,none,True,windowed,True,False
+04b91841d1111a6102eed922a608810a,50.0,ECR: 0.5; reason: 无钩子+静态画面,38.43787908432792,5,direct,discrete,none,none,True,windowed,True,False
+cab6a0546106e166d1be06ed333973ff,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止、无运动,35.74799452162003,5,direct,discrete,none,none,True,windowed,True,False
+d30b0900bcf949a01d3624cee7dc079b,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止,57.52846801017414,5,direct,discrete,none,none,True,windowed,True,False
+63089076bdb9b49126b7d0b18a0d675a,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止,12.80453922911367,5,direct,discrete,none,none,True,windowed,True,False
+1f1a53d69c56b1977ef119e137d79d53,50.0,ECR: 0.5; reason: 无任何钩子且内容平淡,24.43827039718255,5,direct,discrete,none,none,True,windowed,True,False
+e9318a03f419c4141862e418e7fd754d,50.0,ECR: 0.5; reason: 无钩子+静态画面,4.28174525533163,5,direct,discrete,none,none,True,windowed,True,False
+3789e6c076c8193b652d1687d9cf5257,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止、无运动,49.51438074740755,5,direct,discrete,none,none,True,windowed,True,False
+104994a8fc1b980bdd750169275b67ba,50.0,ECR: 0.5; reason: 无任何钩子且内容平淡,70.54901193504206,5,direct,discrete,none,none,True,windowed,True,False
+9de8d6880ded049756000511199a50f5,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止、模糊、无动作或无明确主题。,64.87027978869105,5,direct,discrete,none,none,True,windowed,True,False
+be15b558767b27c4b2353047fe8fd47a,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止、模糊、无动作或无明确主题。,33.66151438074741,5,direct,discrete,none,none,True,windowed,True,False
+baa3173483e82d4be24679ee03469cce,50.0,ECR: 0.5; reason: 无任何视觉/文本钩子，前3秒静止、模糊、无动作或无明确主题。,57.41185677949521,5,direct,discrete,none,none,True,windowed,True,False
+22a5044240cc5cb11cb2557a3ced8f0b,50.0,"ECR: 0.5; reason: Hook Strength=0, Visual Dynamism=0, Narrative Progression=0",75.92565055762081,5,direct,discrete,none,none,True,windowed,True,False
+34ee9f2ca6c812f18c081a7b1d2e991b,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止,35.23928781060458,5,direct,discrete,none,none,True,windowed,True,False
+ab89919e38894c492ebaead43ba59375,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止,51.77069066718841,5,direct,discrete,none,none,True,windowed,True,False
+87a795d836bab74f8d461b09f092bcbe,50.0,ECR: 0.5; reason: 无任何钩子且画面静态,83.62903541381334,5,direct,discrete,none,none,True,windowed,True,False
+52f6d737bb67d4fe3e5928ee6ecfe78f,50.0,ECR: 0.5; reason: 无任何钩子，前3秒静止、模糊、无动作或无明确主题。,50.22030913715515,5,direct,discrete,none,none,True,windowed,True,False
+0d5add962f8d03561f86018082d307eb,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止,34.95049892388965,5,direct,discrete,none,none,True,windowed,True,False
+20eed2feeb0586427f0fc935edd6b471,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止、无运动,17.35002934846409,5,direct,discrete,none,none,True,windowed,True,False
+e07d798d988a4c5edec8ab1d667b5e8b,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止、模糊、无动作或无明确主题。,49.6771668949325,5,direct,discrete,none,none,True,windowed,True,False
+874418c779a2d2cdecb3a8384f5ee68a,50.0,ECR: 0.5; reason: 无任何钩子且内容平淡,55.13989434552925,5,direct,discrete,none,none,True,windowed,True,False
+200087d11ab02a71b8a7c966bc225de2,50.0,ECR: 0.5; reason: 无钩子+静态画面,34.53648992369399,5,direct,discrete,none,none,True,windowed,True,False
+d264cfecba8bfd69d4ae906d2b212b3c,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止、无运动,93.5566425357073,5,direct,discrete,none,none,True,windowed,True,False
+e08d8e849a8a36fb5ae9c9902db2dea4,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止、模糊、无动作或无明确主题。,87.75347290158481,5,direct,discrete,none,none,True,windowed,True,False
+2767600bd99781649c90703e99cee785,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止、无运动,56.49618469966738,5,direct,discrete,none,none,True,windowed,True,False
+261b18b2e28ebb000a9f27c47d24a64f,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止、无运动,92.19643905302289,5,direct,discrete,none,none,True,windowed,True,False
+89b95df8e6515bc6c35cf239f977d807,50.0,ECR: 0.5; reason: 无任何钩子且节奏慢,45.25924476619057,5,direct,discrete,none,none,True,windowed,True,False
+1b5d49697d71bb187c9b2c56bed366f7,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止、无运动,97.42359616513404,5,direct,discrete,none,none,True,windowed,True,False
+5b1f038888d06e54ac559c854f501455,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止、模糊、无动作或无明确主题。,63.51164155742516,5,direct,discrete,none,none,True,windowed,True,False
+9682102f3197ba299c67a454424c2898,50.0,ECR: 0.5; reason: 无任何钩子且内容平淡,60.63079632165916,5,direct,discrete,none,none,True,windowed,True,False
+5f0501cbb1f61db2ff56c04a9623a31d,15.0,ECR: 0.15; reason: low quality and lack of visual hooks,69.88064957933868,5,direct,discrete,none,none,True,windowed,True,False
+832ea6a6be21689babe58dfacbe542c1,50.0,ECR: 0.5; reason: 无任何视觉/文本钩子，前3秒静止、模糊、无动作或无明确主题。,83.58755625122285,5,direct,discrete,none,none,True,windowed,True,False
+ec2ec5b2014c451a3463e2d459f5ae52,50.0,ECR: 0.5; reason: 无钩子+基础吸引力,29.77029935433379,5,direct,discrete,none,none,True,windowed,True,False
+58ee7157e84fa205465e63b679f2b067,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止,38.43161807865388,5,direct,discrete,none,none,True,windowed,True,False
+406eeaf03fab421c2f674fc48c2d800a,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止,17.29837605165329,5,direct,discrete,none,none,True,windowed,True,False
+906068f8a65c877909bfc51c6e6159d0,50.0,"ECR: 0.5; reason: The video starts with a static shot of a golf course, and the camera pans to show a person playing golf. There is no clear hook or narrative progression in the first few seconds, which suggests that the video may not be engaging enough to keep viewers interested. Additionally, the video is shot in a straightforward style without any dramatic music or sound effects, which could contribute to a lower ECR score.",84.91880258266484,5,direct,discrete,none,none,True,windowed,True,False
+78ecfb780d295441856a684a3319cbd9,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止、模糊、无动作或无明确主题。,19.55312072001565,5,direct,discrete,none,none,True,windowed,True,False
+b772a4de9b1ca6acc53eab309e1062d0,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止、模糊、无动作或无明确主题。,68.99471727646254,5,direct,discrete,none,none,True,windowed,True,False
+98f9501daa40a6b55875e2f9ae2ef2d4,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止、无任何信息,79.39268244961846,5,direct,discrete,none,none,True,windowed,True,False
+3ae52c52e73282cd052f3d8b4053a6e7,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止,66.02934846409705,5,direct,discrete,none,none,True,windowed,True,False
+d1bdc888c3e2f60a2aeb9e089d60be1c,50.0,ECR: 0.5; reason: 无任何钩子且内容平淡,78.4003130502837,5,direct,discrete,none,none,True,windowed,True,False
+27ff09ba24b5c6d85b797fd65f6a0cf4,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止、无运动,6.272745059675209,5,direct,discrete,none,none,True,windowed,True,False
+60b5dedb0b52636e0a13d200f6e5fafb,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止,34.077088632361566,5,direct,discrete,none,none,True,windowed,True,False
+49319c98251f6761a49a29ab79f52ba8,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止,98.70084132263744,5,direct,discrete,none,none,True,windowed,True,False
+1f205a77c5b783decd60c586be13326c,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止,15.8293875953825,5,direct,discrete,none,none,True,windowed,True,False
+c817c190cf11d6385597b17e43036293,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止,56.88514967716689,5,direct,discrete,none,none,True,windowed,True,False
+f32c443e991cdf333a182f67163f9b66,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止、模糊、无动作或无明确主题。,1.9956955585991,5,direct,discrete,none,none,True,windowed,True,False
+cd806e8e806b22863bd01aa76cb992ab,50.0,"ECR: 0.5; reason: Hook Strength=0, Visual Dynamism=0, Narrative Progression=0",47.72216787321463,5,direct,discrete,none,none,True,windowed,True,False
+3fd24105302c6aad6320462212fdf023,50.0,ECR: 0.5; reason: 无任何钩子且画质一般,66.06691449814126,5,direct,discrete,none,none,True,windowed,True,False
+9e1b79c35ca3fd182bdeb931237bd450,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止、模糊、无动作或无明确主题。,37.627078849540204,5,direct,discrete,none,none,True,windowed,True,False
+99018c3cb4a4e4031ee2e5e9a581996c,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止、模糊、无动作或无明确主题。,17.829778908237127,5,direct,discrete,none,none,True,windowed,True,False
+30c6f82f374cc41bf4fdfd47320816b1,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止,34.208569751516336,5,direct,discrete,none,none,True,windowed,True,False
+e81b1bb40d743c1ee0184733c13b1f40,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止,53.47055370768929,5,direct,discrete,none,none,True,windowed,True,False
+a616388f17ecb28e1c22000a16ae1b09,50.0,ECR: 0.5; reason: 无钩子+静态画面,79.62199178243006,5,direct,discrete,none,none,True,windowed,True,False
+60b4750e5c4dee98fb0319da021acd92,50.0,ECR: 0.5; reason: 无钩子+静态画面,47.78947368421052,5,direct,discrete,none,none,True,windowed,True,False
+69f106fbe979fa619cc07fba2af0bdb2,50.0,ECR: 0.5; reason: 无钩子+静态画面,45.58325180982195,5,direct,discrete,none,none,True,windowed,True,False
+42d718b9ef2c1ff7757a04947ab01786,50.0,ECR: 0.5; reason: 无任何钩子或情绪，且前3秒为静止、模糊、无运动或无明确主题。,24.5079240853062,5,direct,discrete,none,none,True,windowed,True,False
+912d6aa0dfa917885628e0a6f4b0e840,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止、模糊、无动作或无明确主题。,45.903345724907055,5,direct,discrete,none,none,True,windowed,True,False
+8d8eccaa41ce82bf42a0655668d553cd,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止、模糊、无动作或无明确主题。,97.69360203482684,5,direct,discrete,none,none,True,windowed,True,False
+5baf478ca72085486d067f8589087adc,50.0,ECR: 0.5 ; reason: 无任何钩子且前3秒静止、模糊、无动作,78.9943259636079,5,direct,discrete,none,none,True,windowed,True,False
+6a55f4baf971163d705867844583f60c,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止、无运动,43.17041674819017,5,direct,discrete,none,none,True,windowed,True,False
+1a45f5fb125cb17248d64c3d5304a3c1,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止、模糊、无动作或无明确主题。,48.75523380943064,5,direct,discrete,none,none,True,windowed,True,False
+f3da31488a244c62fe3fb4cde38c9e94,50.0,"ECR: 0.5; reason: Hook Strength=0, Visual Dynamism=0, Narrative Progression=0",35.36059479553903,5,direct,discrete,none,none,True,windowed,True,False
+b04ccdc86e3e4391e72a05a3d87a72d3,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止、模糊、无动作或无明确主题。,78.43709645861865,5,direct,discrete,none,none,True,windowed,True,False
+fa92d503748232ecfa51031bd26292e3,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止,43.203287027978874,5,direct,discrete,none,none,True,windowed,True,False
+54492874bd8951225f8851d565e88a79,50.0,"ECR: 0.5; reason: The video starts with a question, ""If you wrote,"" and then shows Chinese food in a bowl. The setting is a dark room with a flashlight shining through the window. The girl in the video has long blonde hair and is wearing a blue shirt. The video seems to be a short film or a personal project.",94.14361181764819,5,direct,discrete,none,none,True,windowed,True,False
+d762aee3d9d9f91f3b5fc26944742191,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止、无运动,3.19937389943259,5,direct,discrete,none,none,True,windowed,True,False
+6eccd410750cae89d1354a4751b78daf,50.0,"ECR: 0.5; reason: The video shows a beautiful pool with a stunning ocean view, but there is no clear hook or narrative structure to engage the viewer. The visuals are stunning, but there is no clear emotional resonance or relatability to keep the viewer engaged beyond the initial shot.",28.64644883584425,5,direct,discrete,none,none,True,windowed,True,False
+3745b4e8432a41249610b2ab3c89d6a9,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止,39.22911367638427,5,direct,discrete,none,none,True,windowed,True,False
+c2c613507d6f894888a350ccaffdf77c,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止,62.396399921737434,5,direct,discrete,none,none,True,windowed,True,False
+9269bbe3be63c5ce5cde7199e9bcac2d,15.0,"ECR: 0.15; reason: The video starts with a dark room with a blue light and a person in the background, which suggests that Josh is already bored in the living room. There is also a caption that says ""Man's got 3 girls in his room and he's playing f n f"", indicating that Josh is playing a game with his friends, which may contribute to his boredom.",35.38250831539816,5,direct,discrete,none,none,True,windowed,True,False
+024a447d126b4354175101887eb125e4,50.0,ECR: 0.5; reason: 无钩子+静态画面,14.318137350811972,5,direct,discrete,none,none,True,windowed,True,False
+35f0996e7ac5b5aee9c2a946964dbd55,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止、无运动,89.12541576990805,5,direct,discrete,none,none,True,windowed,True,False
+95a90d0af2d46d993b1ef9e9db57ed4f,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止、模糊、无动作或无明确主题。,46.13735081197417,5,direct,discrete,none,none,True,windowed,True,False
+8e2d416f772505d40f011847e1a935b5,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止、无运动,92.51183721385247,5,direct,discrete,none,none,True,windowed,True,False
+d3c41ac2197a350adcbad61a04edcbcc,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止,84.28252788104089,5,direct,discrete,none,none,True,windowed,True,False
+a54278c72d65f1128b4fb5557fa3f225,50.0,ECR: 0.5; reason: 无钩子+静态画面,37.065936216004694,5,direct,discrete,none,none,True,windowed,True,False
+b4a21c700ece63e01306e32167c67b06,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止、无运动,73.69986304050087,5,direct,discrete,none,none,True,windowed,True,False
+0d1a33bd7d4aee6497dcd9895c041b4e,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止,7.606339268244961,5,direct,discrete,none,none,True,windowed,True,False
+4fcaa2af5a61360d471811d055f095fa,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止,43.76521228722363,5,direct,discrete,none,none,True,windowed,True,False
+c4c857f2376e155863ca5cfe72263091,50.0,"ECR: 0.5; reason: The video starts with a woman posing for a photo, then she starts talking about the Quiktrip truck stop. There is no visual hook in the first few seconds, and the narrative progression is slow. The woman's facial expression and body language suggest that she is not very happy or excited about working for the company at the age of 30.",31.496771668949318,5,direct,discrete,none,none,True,windowed,True,False
+a1360032f005429776940ce311025fb5,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止,78.61788299745646,5,direct,discrete,none,none,True,windowed,True,False
+774f82434b7ee350736af000aafaad14,50.0,"ECR: 0.5; reason: The video starts with a text that says ""Funniest person | Hottest person | sparkles you sparkles"", which implies that the video may be about humor and appearance. However, there is no visual or audio hook to suggest a strong engagement from the viewer. Additionally, the video does not provide any clear narrative structure or emotional resonance, which may affect the viewer's willingness to continue watching.",81.47368421052632,5,direct,discrete,none,none,True,windowed,True,False
+6e9853aaceed68b00f40be78e3e54e66,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止、模糊、无动作或无明确主题。,11.78086480140872,5,direct,discrete,none,none,True,windowed,True,False
+21a674e0e0aa28d723a672f64880fb93,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止、模糊、无动作或无明确主题。,73.47290158481707,5,direct,discrete,none,none,True,windowed,True,False
+5ba77e55a064435bab7a835b2c3f787a,50.0,ECR: 0.5; reason: 无任何钩子且画面静态,22.65075327724516,5,direct,discrete,none,none,True,windowed,True,False
+ae3267f66daefeaef7ce87c97a2e4ae2,50.0,ECR: 0.5; reason: 无任何钩子且内容平淡,0.93288984543142,5,direct,discrete,none,none,True,windowed,True,False
+575138665fd47d247b16c457d403ca51,50.0,ECR: 0.5; reason: 无钩子+基础吸引力,70.49814126394051,5,direct,discrete,none,none,True,windowed,True,False
+f0ae652b85e749bfc9fc67c2a82bd830,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止、无运动、无变化,91.08824104871844,5,direct,discrete,none,none,True,windowed,True,False
+6507cebeb9568decd62ef29469612864,50.0,ECR: 0.5; reason: 无任何钩子且内容平淡,16.4390530228918,5,direct,discrete,none,none,True,windowed,True,False
+109e8f0c498a6c9a5513c39c3647015a,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止、模糊、无动作或无明确主题。,3.40520446096654,5,direct,discrete,none,none,True,windowed,True,False
+321648e5040696fb0eaac18cb24ff13f,50.0,ECR: 0.5; reason: 无任何钩子且画质一般,32.33731168068871,5,direct,discrete,none,none,True,windowed,True,False
+5804d022c0e55ac4c53107a56706b33f,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止,71.20641753081588,5,direct,discrete,none,none,True,windowed,True,False
+bd0ef08afe0c0487a494f3d19bb515e6,50.0,ECR: 0.5; reason: 无任何钩子且内容平淡,90.38700841322638,5,direct,discrete,none,none,True,windowed,True,False
+790b601f3b0e6b9a928ac484327c7abc,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止,22.11856779495206,5,direct,discrete,none,none,True,windowed,True,False
+51bbd9f6cf9afdd1999c3ff46ef7aaa6,50.0,ECR: 0.5; reason: 有钩子但不清晰,4.68636274701623,5,direct,discrete,none,none,True,windowed,True,False
+aabc091d5cc981f533ad7a94343aab8e,50.0,ECR: 0.5; reason: 有钩子但不清晰,39.09606730581099,5,direct,discrete,none,none,True,windowed,True,False
+5a198ac706b41eedf69951af7346d44c,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止,25.28741929172373,5,direct,discrete,none,none,True,windowed,True,False
+6d567e8154489f9f84019c8963e1bce5,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止、无运动,81.4102915280767,5,direct,discrete,none,none,True,windowed,True,False
+5e520a27abb36a71b92f40a58b24053b,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止,34.18978673449422,5,direct,discrete,none,none,True,windowed,True,False
+43ebbf2630e33c406d09846141397552,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止、模糊、无动作或无明确主题。,83.93660731755038,5,direct,discrete,none,none,True,windowed,True,False
+1830746f75685f965685ed096049bb05,50.0,ECR: 0.5; reason: 无钩子+基础吸引力,2.81980043044414,5,direct,discrete,none,none,True,windowed,True,False
+d1da05c3dcbefbfb584207db6f8d9975,50.0,"ECR: 0.5; reason: The video shows a cartoon image of Homer Simpson with a target on his stomach, indicating that he is going to die. However, it is not clear how this relates to the overall video content or what the significance of the target on his stomach is.",91.61886127959305,5,direct,discrete,none,none,True,windowed,True,False
+a207fe250f335ebb5fa31eb68eab00d6,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止,24.268440618274308,5,direct,discrete,none,none,True,windowed,True,False
+1df4ebe3243e868ead8f16bc3a7c49ad,50.0,"ECR: 0.5; reason: The video starts with a question that might be interesting to the viewers, and the kid in the video seems to be upset about something. However, there is no clear visual hook or narrative structure to suggest a high ECR.",97.72490706319704,5,direct,discrete,none,none,True,windowed,True,False
+8cc0323f87ba444227dc3ed88ac011b4,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止,27.254157699080412,5,direct,discrete,none,none,True,windowed,True,False
+47fdd744f6f2a5bf35e510daf2393b97,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止、模糊、无动作或无明确主题。,96.65818822148307,5,direct,discrete,none,none,True,windowed,True,False
+6c71d3fd4d72c9e731e616e721ef887c,50.0,ECR: 0.5; reason: 无任何钩子且内容平淡,19.15711211113285,5,direct,discrete,none,none,True,windowed,True,False
+e337dc127437f9d0d93e3c99e9650dbb,50.0,ECR: 0.5; reason: 有钩子但不清晰,85.07611035022501,5,direct,discrete,none,none,True,windowed,True,False
+2703b3b48679c118d04378ffa849d5f1,15.0,ECR: 0.15; reason: 无任何钩子且前3秒静止,29.259244766190566,5,direct,discrete,none,none,True,windowed,True,False
+22b598b3cff1b28d06f26eec6185f425,50.0,ECR: 0.5; reason: 无钩子+静态画面,77.54020739581296,5,direct,discrete,none,none,True,windowed,True,False
+0ea159adc7afacc8483dc22e65ef6a13,50.0,"ECR: 0.5; reason: The video starts with a static image of a cell phone with the Siri app open, showing the time and date on the screen. There is no visual hook or narrative progression in the first few seconds, which may affect the user's engagement and retention.",84.72079827822344,5,direct,discrete,none,none,True,windowed,True,False
+83aa35a5ff67742e0d64b481e430dfc9,50.0,ECR: 0.5; reason: 无钩子+基础吸引力,51.838779103893565,5,direct,discrete,none,none,True,windowed,True,False
+46103a12b8754acdd7d3bc69f3493d1e,50.0,ECR: 0.5; reason: 无任何钩子且画面静态,92.75836431226766,5,direct,discrete,none,none,True,windowed,True,False
+a14bff571cb5044d75a6bfa9396cbbeb,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止,51.24476619056936,5,direct,discrete,none,none,True,windowed,True,False
+96941f74cfe979e25ed5ec6ce44a088e,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止、无运动,12.941498728233219,5,direct,discrete,none,none,True,windowed,True,False
+026b6e0437aeb91878cecde6165548f4,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止、模糊、无动作或无明确主题。,31.38798669536294,5,direct,discrete,none,none,True,windowed,True,False
+c61bbd8e92da42f9c6b70f6c886f7b7d,50.0,"ECR: 0.5; reason: The video starts with a man throwing a frisbee, which is caught in the wind. The scene then cuts to a man walking on a sidewalk in a park, and then to a man playing frisbee in the woods. The video ends with a man throwing a frisbee at a target. There are no clear visual hooks or narrative payoffs in the video, and the production quality is average.",44.11661123067892,5,direct,discrete,none,none,True,windowed,True,False
+b7903015362487a3921d31acf5932b4f,50.0,ECR: 0.5; reason: 无钩子+静态画面,48.64801408726276,5,direct,discrete,none,none,True,windowed,True,False
+49a9e0c1e954fd37bb780aac029d26ef,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止,68.4993152025044,5,direct,discrete,none,none,True,windowed,True,False
+c8707e7e3e379861bd68c2884d4cf627,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止、无运动。,81.73195069458032,5,direct,discrete,none,none,True,windowed,True,False
+1eb423f211437af0f24152e19da594fe,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止、无运动,12.086088828018001,5,direct,discrete,none,none,True,windowed,True,False
+da7a6c33990a2afb2f25b72d217d56e3,50.0,"ECR: 0.5; reason: The video shows a man on a motorcycle with a helmet, leather vest, and red light. The man is revving the engine and there are other cars in the background. The video is only 8 seconds long and does not provide enough information to score higher than this.",73.68186264918802,5,direct,discrete,none,none,True,windowed,True,False
+2c5f1cc1c7877923472cfce0d8185228,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止、模糊、无动作或无明确主题。,91.95304245744472,5,direct,discrete,none,none,True,windowed,True,False
+bf82234b97f705d534a0b048d41b6051,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止、无运动,72.2410487184504,5,direct,discrete,none,none,True,windowed,True,False
+79c16573ac9e395353e8476b1b540de2,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止、模糊、无动作或无明确主题。,96.54470749364116,5,direct,discrete,none,none,True,windowed,True,False
+aab5d863cf79c0b3ff6b29d2e8fdb09f,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止,38.47231461553512,5,direct,discrete,none,none,True,windowed,True,False
+2b1cee166c5ee78edbfe008961da6de6,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止,11.98121698297789,5,direct,discrete,none,none,True,windowed,True,False
+76c2afaf1dae252708d53fca06a500a8,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止,1.91899823909215,5,direct,discrete,none,none,True,windowed,True,False
+34bcabb16f5183e5321a71b37b9e094c,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止,66.8495402073958,5,direct,discrete,none,none,True,windowed,True,False
+ad9c66738414845ca1738dca7d940b7d,50.0,ECR: 0.5; reason: 无任何钩子且低级趣味,28.548620622187435,5,direct,discrete,none,none,True,windowed,True,False
+02c20e8f123303d65bdcf986730f6b2f,50.0,ECR: 0.5; reason: 无钩子+静态画面,27.51633731168069,5,direct,discrete,none,none,True,windowed,True,False
+594fd294fdb3bf38d943d6a6e516d9c4,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止、模糊、无动作或无明确主题。,72.57366464488358,5,direct,discrete,none,none,True,windowed,True,False
+8f89d194bba8305efdfcb805156b078f,15.0,ECR: 0.15 ; reason: 无钩子+低质+无情绪,66.59205634905106,5,direct,discrete,none,none,True,windowed,True,False
+71859bdafd64e73a7aa144245ddd7529,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止、模糊、无动作,88.14009000195657,5,direct,discrete,none,none,True,windowed,True,False
+12a919aaf99975eda8d73c79858cb661,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止、模糊、无动作或无明确主题。,86.4950107611035,5,direct,discrete,none,none,True,windowed,True,False
+abcef37327a68673fb7042ba3e3ba587,50.0,ECR: 0.5; reason: 无任何钩子且内容平淡,56.86245353159851,5,direct,discrete,none,none,True,windowed,True,False
+3bb8026aef7136d66946d4113d599444,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止,45.10350225004891,5,direct,discrete,none,none,True,windowed,True,False
+56c0c68b339b053127fa656be99b272d,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止、模糊、无动作或无明确主题。,72.04539229113676,5,direct,discrete,none,none,True,windowed,True,False
+538c0459d67cc3c772a0fbf6ce3005c4,50.0,ECR: 0.5; reason: 无任何钩子且画质一般,67.20015652514185,5,direct,discrete,none,none,True,windowed,True,False
+b95205223a4b461958678102b08d2caf,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止,82.96067305810996,5,direct,discrete,none,none,True,windowed,True,False
+8065d39b5f4c293361ba3373ce54e2f9,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止、模糊、无动作或无明确主题。,98.52944629231072,5,direct,discrete,none,none,True,windowed,True,False
+a502bcdd54d733df354f270c8b008fbd,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止,96.69575425552728,5,direct,discrete,none,none,True,windowed,True,False
+c61bf2570a289b30fe5a6a2b8a3568b1,50.0,ECR: 0.5; reason: 无任何钩子且画质一般,56.56583838779103,5,direct,discrete,none,none,True,windowed,True,False
+ee01b5f3d7e8d227cca4d5d0338527ec,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止,1.11758951281549,5,direct,discrete,none,none,True,windowed,True,False
+bf539638db885ef053bdf4e74bba9a96,50.0,ECR: 0.5; reason: 无任何钩子且内容平淡,22.95675992956368,5,direct,discrete,none,none,True,windowed,True,False
+bd1d65c8a11f60c8192bdf2cdcb94919,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止,6.03639209548033,5,direct,discrete,none,none,True,windowed,True,False
+efe3f6152b6b7e9077f4f443a2d06adc,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止、模糊、无动作或无明确主题。,42.51301115241636,5,direct,discrete,none,none,True,windowed,True,False
+8e4ec51daae19a1e7afc5ca20b128216,50.0,ECR: 0.5; reason: 无任何钩子且低级趣味,34.19056936020348,5,direct,discrete,none,none,True,windowed,True,False
+c6aaf900b1609285bd7e5b69696aab00,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止、无运动,8.99158677362551,5,direct,discrete,none,none,True,windowed,True,False
+164b1eefefd414bf42ad895416767295,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止,33.93856388182352,5,direct,discrete,none,none,True,windowed,True,False
+03cb0bc8e70950570cc0b5cd27f073e6,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止、模糊、无动作或无明确主题。,70.68910193699864,5,direct,discrete,none,none,True,windowed,True,False
+d2a701211c71eb366a0a977488d2d3d3,50.0,ECR: 0.5; reason: 无钩子+基础吸引力,82.46292310702407,5,direct,discrete,none,none,True,windowed,True,False
+aa8057782255e5b02aaed75f3a68e5a2,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止,93.63568773234199,5,direct,discrete,none,none,True,windowed,True,False
+cdef53d5c02c3e22e129770c02e54484,50.0,ECR: 0.5; reason: 无钩子+基础吸引力,7.32615926433183,5,direct,discrete,none,none,True,windowed,True,False
+fcd0ab0fe54da34aa9a2bc91b24f59ff,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止,18.803365290549788,5,direct,discrete,none,none,True,windowed,True,False
+dcf1d1a362751920ee4d6651d797c40e,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止,54.09117589512815,5,direct,discrete,none,none,True,windowed,True,False
+c7d77f6784a31b5be3238ba802a04455,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止,34.04343572686363,5,direct,discrete,none,none,True,windowed,True,False
+21a3ff392323b3eac28983c99e6b3860,50.0,ECR: 0.5; reason: 无任何钩子且画质一般,60.91254157699081,5,direct,discrete,none,none,True,windowed,True,False
+1d0355371713e850e63e91fd91b13d85,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止、无运动,28.512619839561733,5,direct,discrete,none,none,True,windowed,True,False
+8ef68b21688519a57125010d6e4b0365,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止、无运动,86.19604774016827,5,direct,discrete,none,none,True,windowed,True,False
+fe0cea4427e2b0d6bb55edbfc84df03e,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止,22.686754059870857,5,direct,discrete,none,none,True,windowed,True,False
+dec56c218b69219a36f729cd9c98e48c,50.0,ECR: 0.5; reason: 无任何钩子且画质一般,8.97515163373116,5,direct,discrete,none,none,True,windowed,True,False
+58943419fec9997155714f3f16a6f7d7,15.0,"ECR: 0.15; reason: The video starts with a slow-motion shot of clouds floating, followed by a person's shadow appearing on the screen. There is no sound or text in the first few seconds. The video then cuts to a man with pink hair and blue eyes, who appears to be wearing makeup. The man's face is shown in close-up, with his lips and nose emphasized. The video ends with a shot of a woman with blonde hair and pink shirt, who appears to be smiling. Overall, the video seems to be focused on beauty and makeup, but there is not enough information to determine the ECR accurately.",84.03678340833495,5,direct,discrete,none,none,True,windowed,True,False
+5cdd27b0cc8ce8ca1f26de4132a94e6b,50.0,ECR: 0.5; reason: 无任何钩子且节奏慢,63.51242418313442,5,direct,discrete,none,none,True,windowed,True,False
+cbc7a1dc40e88cfe427027c0b28d847e,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止,54.69614556838193,5,direct,discrete,none,none,True,windowed,True,False
+c91b9f7906719ec8e6be66bb798b9f3d,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止,14.675797299941301,5,direct,discrete,none,none,True,windowed,True,False
+26e10c085a4771ac0d7a88c0be530ae0,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止、模糊、无动作或无明确主题。,93.09645861866562,5,direct,discrete,none,none,True,windowed,True,False
+5428402fe0802f74c2e638aa1cb9e5ca,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止,14.88319311289375,5,direct,discrete,none,none,True,windowed,True,False
+796ce0069e323cdf274851a54cbedb66,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止、模糊、无动作或无明确主题。,94.13265505771864,5,direct,discrete,none,none,True,windowed,True,False
+f88b596b8619ad2b7fd6e0a8b3709d44,50.0,ECR: 0.5; reason: 无钩子+基础吸引力,28.105654470749357,5,direct,discrete,none,none,True,windowed,True,False
+7db623caf3379561fe867126e96daf24,50.0,ECR: 0.5; reason: The video shows a boy giving a report on a survivor with a red heart and a crying face. The narrative progression is low as the video only shows the boy talking and the background is static. There is no visual dynamism or emotional resonance in the video. The production quality is also low as the video is blurry and the sound quality is poor.,51.521033065936216,5,direct,discrete,none,none,True,windowed,True,False
+b5c3fe3ab5b4c5c7f8add6392bde4598,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止,0.0,5,direct,discrete,none,none,True,windowed,True,False
+62a93fd6b4cf2046d6fbcb48b42a1432,50.0,ECR: 0.5; reason: 无任何钩子且低质。,85.1019369986304,5,direct,discrete,none,none,True,windowed,True,False
+cb595114abc0e3886e76e502c822a570,50.0,ECR: 0.5; reason: 有钩子但不清晰,80.18391704167482,5,direct,discrete,none,none,True,windowed,True,False
+0aad469b35bbf1ec83f72e3898a803e7,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止,21.44707493641166,5,direct,discrete,none,none,True,windowed,True,False
+7ad49e6440ba2d22d5fd89073d49ed87,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止,82.70397182547447,5,direct,discrete,none,none,True,windowed,True,False
+931e580198147a177180e7905922f845,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止,23.07571903737037,5,direct,discrete,none,none,True,windowed,True,False
+8708883162d586b009e17d727bcb4487,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止,0.0,5,direct,discrete,none,none,True,windowed,True,False
+29e6cb28b8ddebeda5a82fa86d7cd4e0,50.0,ECR: 0.5; reason: 无任何钩子且节奏慢,32.67071023283114,5,direct,discrete,none,none,True,windowed,True,False
+fc6239213a76b386de2787110ba5a8f6,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止、模糊、无动作或无明确主题。,93.25611426335357,5,direct,discrete,none,none,True,windowed,True,False
+73665ab9ab3c9cf3674018d60f9d592c,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止,34.07239287810604,5,direct,discrete,none,none,True,windowed,True,False
+28060109325db1ae97f1fcea0e363f54,50.0,ECR: 0.5; reason: 有钩子但不清晰,18.65936216004695,5,direct,discrete,none,none,True,windowed,True,False
+8ead351a4bd7bfac104d6a9d25e5d19b,50.0,ECR: 0.5; reason: 无任何钩子且内容平淡,42.73292897671688,5,direct,discrete,none,none,True,windowed,True,False
+50d06dffa983f89e220b722c6c90f563,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止,41.18176482097437,5,direct,discrete,none,none,True,windowed,True,False
+be96ef98c6501007e5d64abb0417ac27,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止、模糊、无动作或无明确主题。,91.25494032478969,5,direct,discrete,none,none,True,windowed,True,False
+c77aa50cc129d1e3950b848d3cf214ef,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止、无运动、无变化,43.74173351594599,5,direct,discrete,none,none,True,windowed,True,False
+1f34092830ef03496dbd18dd97a75de8,50.0,ECR: 0.5; reason: 无任何钩子且内容平淡,88.86010565447074,5,direct,discrete,none,none,True,windowed,True,False
+0605fd666e2c81f34358963654545151,50.0,ECR: 0.5; reason: 无任何钩子且内容平淡,30.628057131676776,5,direct,discrete,none,none,True,windowed,True,False
+12b6be5767d386582f1af0aee063fef5,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止,3.6611230678927797,5,direct,discrete,none,none,True,windowed,True,False
+e3bf5ce4ac0e335e1edbb7903afc937b,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止,35.530424574447274,5,direct,discrete,none,none,True,windowed,True,False
+5d72738bbbce8d53e82dbec8cabf784b,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止,68.5251418509098,5,direct,discrete,none,none,True,windowed,True,False
+ab5faccf585bca9b343b958ee273d84e,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止,76.88749755429465,5,direct,discrete,none,none,True,windowed,True,False
+de86fa86ed72fb70d9b04f9013ec9333,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止、模糊、无动作或无明确主题。,91.87008413226374,5,direct,discrete,none,none,True,windowed,True,False
+8f4b51c2b41fd9c0acbdff7762eb50b9,50.0,ECR: 0.5; reason: 无任何钩子且节奏慢,73.31402856583838,5,direct,discrete,none,none,True,windowed,True,False
+42d40b5e19f26cc0eec214f640865165,50.0,ECR: 0.5; reason: 无任何钩子且内容平淡,62.26491880258267,5,direct,discrete,none,none,True,windowed,True,False
+0d14a40e6516cb06bbc30ce97b3dcbf6,50.0,"ECR: 0.5; reason: The video starts with a woman looking at the camera with a neutral expression. There is no obvious hook or narrative structure in the first few seconds, and the visual dynamism is low. The emotional resonance is also unclear as there is no obvious emotion being expressed. Therefore, the ECR score is relatively low.",28.03834865975347,5,direct,discrete,none,none,True,windowed,True,False
+47f7b77efad367c94a5a1df362adfd38,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止,90.53179416943846,5,direct,discrete,none,none,True,windowed,True,False
+5b76802883d2059d133779ab3882f1c0,50.0,ECR: 0.5 ; reason: 无任何钩子且前3秒静止,56.12208961064371,5,direct,discrete,none,none,True,windowed,True,False
+be4806ada70f11177669325ff34d992c,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止,80.61514380747408,5,direct,discrete,none,none,True,windowed,True,False
+72ae9bac4dd52c9e6befc90d9bae710c,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止,27.53903345724907,5,direct,discrete,none,none,True,windowed,True,False
+66b5a39383530540961df4503ecfe7e6,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止,37.05967521033066,5,direct,discrete,none,none,True,windowed,True,False
+c278fde9605c44267c35d917e57b766c,15.0,"ECR: 0.15; reason: The video starts with a yellow pencil drawing a heart shape on a white surface, which is a simple and relatable visual element that can capture the viewer's attention. However, the description mentions that the initial is ""extremely poor broken heart credit card"", which implies that there may be some negative or unrelated elements in the video that could affect the overall ECR score.",54.09665427509294,5,direct,discrete,none,none,True,windowed,True,False
+236b660f8e0c201c6852cd5c4cd212f1,50.0,"ECR: 0.5; reason: The video starts with a clear glass of water, and the man's hand is holding a colorful object. There is no visual hook or narrative progression at this point.",80.97593425944042,5,direct,discrete,none,none,True,windowed,True,False
+fc2c272142fa045aeb58d25c2715f1e0,50.0,ECR: 0.5; reason: 无任何钩子且内容平淡,0.21600469575425,5,direct,discrete,none,none,True,windowed,True,False
+52aad08cad7740adb6f8b3e137ede4a5,50.0,"ECR: 0.5; reason: Hook Strength=0, Visual Dynamism=0, Narrative Progression=0",57.464292702015264,5,direct,discrete,none,none,True,windowed,True,False
+da79e237b9383be44f822f88e7b3a77e,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止，需要等待>3秒才理解意图。,23.45294462923107,5,direct,discrete,none,none,True,windowed,True,False
+0da939e9fdf184e450a65e5074e39a2c,50.0,ECR: 0.5; reason: 无钩子+静态画面,43.83799647818431,5,direct,discrete,none,none,True,windowed,True,False
+5e138c1e034d81e481026554b5e0182d,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止、无运动,24.18235179025631,5,direct,discrete,none,none,True,windowed,True,False
+40481787d8ff449fb483151de76e0bf1,50.0,ECR: 0.5; reason: 无钩子+静态画面,36.803756603404416,5,direct,discrete,none,none,True,windowed,True,False
+1f7ab9bac0f1b1fc614f44ec135e8934,50.0,ECR: 0.5; reason: 无钩子+基础吸引力,26.078653883780078,5,direct,discrete,none,none,True,windowed,True,False
+35cde165dc5dbab0cbe701bb3683d111,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止、模糊、无动作或无明确主题。,32.78497358638231,5,direct,discrete,none,none,True,windowed,True,False
+6048ecb296ef45aef10d05499e2d11d6,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止、模糊、无动作或无明确主题。,28.288788886714926,5,direct,discrete,none,none,True,windowed,True,False
+5dc6af36e0b411dfd2f0638a5eb36c7e,50.0,ECR: 0.5; reason: 有钩子但不清晰,61.51829387595382,5,direct,discrete,none,none,True,windowed,True,False
+f7ad8816b74e834c8d9729e91c7ccbae,50.0,"ECR: 0.5; reason: The video shows a man holding a skateboard in the parking lot, and then he makes a sense of skateboarding. The video also features a person riding a skateboard on the street with the words ""just make sense"". Additionally, there is a man doing a trick on a skateboard in a parking lot. These videos provide clear visual cues and a strong narrative structure that engages the viewer.",81.35472510271963,5,direct,discrete,none,none,True,windowed,True,False
+81566dd8d68fed44529fb9c1345c35d3,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止、模糊、无动作或无明确主题。,52.99236939933477,5,direct,discrete,none,none,True,windowed,True,False
+8fb6d21ae85754d796f9898da2a85faa,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止、模糊、无动作或无明确主题。,1.34846409704558,5,direct,discrete,none,none,True,windowed,True,False
+2b26e57670185eb1e59b1e3c520c0f89,50.0,ECR: 0.5; reason: 无钩子+静态画面,85.9612600273919,5,direct,discrete,none,none,True,windowed,True,False
+5a1ad02e25be64bdc32343da44a0f58f,50.0,ECR: 0.5; reason: 无任何视觉/文本钩子，前3秒静止、模糊、无动作或无明确主题。,15.97495597730385,5,direct,discrete,none,none,True,windowed,True,False
+5b6fd8023d52c59cd8693e9a65989b9e,50.0,ECR: 0.5; reason: 无任何钩子且节奏慢,78.81588730189787,5,direct,discrete,none,none,True,windowed,True,False
+85f988159352a3e49efb5642d9029bc5,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止、无运动、无变化,56.02895715124242,5,direct,discrete,none,none,True,windowed,True,False
+85ea3c8bbf9f5ef62eab5ae03414de02,50.0,ECR: 0.5; reason: 无任何钩子且内容平淡,31.32615926433183,5,direct,discrete,none,none,True,windowed,True,False
+91dc47b08d853c30f07260a91f827b57,50.0,ECR: 0.5 ; reason: 无任何钩子且前3秒静止,63.931911563294854,5,direct,discrete,none,none,True,windowed,True,False
+f473d0da8d8b2ce19d6c9380a4320201,50.0,ECR: 0.5; reason: 无钩子+静态画面,2.59909998043435,5,direct,discrete,none,none,True,windowed,True,False
+b440020197abd5a61ef8503477e7d391,15.0,"ECR: 0.15; reason: The video starts with a blurry image of a person's hand holding a pen, which may suggest that the person is about to write something. However, the subsequent frames show a woman covering her face with her hands, indicating that she may be crying or feeling embarrassed. This suggests that the video may be depicting a moment of emotional distress or vulnerability, which could explain the low ECR score.",88.26844061827431,5,direct,discrete,none,none,True,windowed,True,False
+98ef3629002108e89599758592591a77,50.0,"ECR: 0.5; reason: Narrative_Progression=0, Visual_Dynamism=0, Emotional_Resonance=0",67.1234592056349,5,direct,discrete,none,none,True,windowed,True,False
+f72d884974977e9ef2c862d6e5b9ed56,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止、模糊、无动作或无明确主题。,0.050088045392290004,5,direct,discrete,none,none,True,windowed,True,False
+c1be2b20b6c89a8cf898a65a940f64e7,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止、无运动,63.81608295832518,5,direct,discrete,none,none,True,windowed,True,False
+24ed2be511f62c47eca8f3b9717e9e89,50.0,ECR: 0.5; reason: 无钩子+静态画面,4.07669731950694,5,direct,discrete,none,none,True,windowed,True,False
+3a991f0b9f9d49426f1a825063d1185b,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止、模糊、无动作或无明确主题。,68.72705928389747,5,direct,discrete,none,none,True,windowed,True,False
+f6779f4c9ebe07d7d4ff993ecec9f44d,50.0,ECR: 0.5; reason: 无任何钩子且内容平淡,94.82684406182744,5,direct,discrete,none,none,True,windowed,True,False
+f09df7641b1351ea230a05d149e0227b,50.0,ECR: 0.5; reason: 无钩子+静态画面,5.57307767560164,5,direct,discrete,none,none,True,windowed,True,False
+dbefe3358ccee75e7cf23ed52f2f60b6,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止、无运动,31.28233222461358,5,direct,discrete,none,none,True,windowed,True,False
+258d7f0eb76e91057208441c9f4ee9e9,50.0,ECR: 0.5; reason: 无任何视觉/文本钩子，前3秒静止、模糊、无动作或无明确主题。,73.99178243005284,5,direct,discrete,none,none,True,windowed,True,False
+ed40673bf5a917ce4dec2622167fa65d,50.0,ECR: 0.5; reason: 无任何钩子且画质一般,9.80395225983173,5,direct,discrete,none,none,True,windowed,True,False
+c5e61db249f5d83e42b24572f0135cdc,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止、无运动,66.94815104676188,5,direct,discrete,none,none,True,windowed,True,False
+55a745da462d13559553092dd50ce930,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止,0.63157894736842,5,direct,discrete,none,none,True,windowed,True,False
+74971a019f9c82e024a798d113d12ec1,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止、模糊、无动作或无明确主题。,0.21443944433573997,5,direct,discrete,none,none,True,windowed,True,False
+b57230fd8b93909a8ae0053515202893,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止,76.7935824691841,5,direct,discrete,none,none,True,windowed,True,False
+0a12696e9d2a3552a3388e76e21d667e,50.0,ECR: 0.5; reason: 无任何钩子且低级趣味,6.630405008804539,5,direct,discrete,none,none,True,windowed,True,False
+61be224ea9296ea44565ab0abce13399,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止、模糊、无动作或无明确主题。,70.23361377421247,5,direct,discrete,none,none,True,windowed,True,False
+ac08c3a6f01e83a698c42374c340ba62,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止，需要等待>3秒才理解意图。,61.77812561142634,5,direct,discrete,none,none,True,windowed,True,False
+096abc64c6b529cf03c61f09229ab126,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止、模糊、无动作或无明确主题。,39.27841909606731,5,direct,discrete,none,none,True,windowed,True,False
+15d2ad5f240c49d837a4cef3e5287555,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止，需要等待>3秒才理解意图。,44.30757190373703,5,direct,discrete,none,none,True,windowed,True,False
+e8d85efe0f0ccbd7989d422aa6b63d78,50.0,ECR: 0.5; reason: 无任何钩子且画面静态,49.95734689884563,5,direct,discrete,none,none,True,windowed,True,False
+0c15dec3e2e450e1f03ead9f604c1a07,50.0,ECR: 0.5; reason: 无任何钩子且内容平淡,54.94423791821561,5,direct,discrete,none,none,True,windowed,True,False
+a20d7cc24c26e92a40d8f9f046da49e7,50.0,"ECR: 0.5; reason: 无任何钩子或情绪,且技术层面一般",97.49951085893171,5,direct,discrete,none,none,True,windowed,True,False
+4fdc9cc7dd1a2f2413b1636349e93a49,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止,14.72979847387986,5,direct,discrete,none,none,True,windowed,True,False
+822881efc866b7bdaeb1f548afb53bcc,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止、无运动,85.00176090784582,5,direct,discrete,none,none,True,windowed,True,False
+90146cd4fbd984cf42a2932b82cdec0e,50.0,ECR: 0.5; reason: 无任何钩子且内容平淡,77.73586382312659,5,direct,discrete,none,none,True,windowed,True,False
+e473faf918463bfe0ebe693c98a6f8cd,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止，需要等待>3秒才理解意图。,23.12502445705341,5,direct,discrete,none,none,True,windowed,True,False
+f61e91446f11c8c27c41e0b23bfaf062,50.0,ECR: 0.5; reason: 无任何钩子且画面静态,88.25357072979847,5,direct,discrete,none,none,True,windowed,True,False
+1f434843f01ef6c5c6486db56ca2c61c,50.0,ECR: 0.5; reason: 无任何钩子且画质一般,78.67266679710428,5,direct,discrete,none,none,True,windowed,True,False
+bb1d139908cc53a5e3ad25a0fed7e265,50.0,ECR: 0.5; reason: 有钩子但不清晰,30.43005282723537,5,direct,discrete,none,none,True,windowed,True,False
+d156eb42e41afe16d59f172d968d6a8e,50.0,ECR: 0.5 ; reason: 无任何钩子且内容平淡,10.48483662688319,5,direct,discrete,none,none,True,windowed,True,False
+ffc49121be8cab32019dcac178e2ffe3,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止、无运动,20.15104676188612,5,direct,discrete,none,none,True,windowed,True,False
+822a305d83f413ee8f2656befe1f4a7f,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止、无运动,7.524946194482481,5,direct,discrete,none,none,True,windowed,True,False
+1acfbef647f1db5834d4c1676b12b302,15.0,ECR: 0.15; reason: low quality and unappealing visual hooks,42.865192721580904,5,direct,discrete,none,none,True,windowed,True,False
+84517ff6d8f3fb1bbc0983e41088bcba,50.0,ECR: 0.5; reason: 无任何钩子且前3秒静止、模糊、无动作或无明确主题。,66.0645666210135,5,direct,discrete,none,none,True,windowed,True,False

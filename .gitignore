@@ -1,0 +1,21 @@
+# Local datasets, downloaded checkpoints, and model weights
+/SnapUGC/
+
+# Python caches
+__pycache__/
+*.py[cod]
+
+# Runtime logs
+*.log
+*.log.*
+*.out
+nohup*.out
+
+# Generated local dataset manifests
+/Qwen2.5-VL/test_qwenvl.json
+
+# OS/editor metadata
+.DS_Store
+.idea/
+.vscode/
+*.swp

@@ -1,0 +1,37 @@
+use of text to complement the visual content",
+      "direction": "positive",
+      "weight": "low",
+      "detection heuristic": "Text placement, font, and legibility"
+    },
+    {
+      "name": "Title-content congruence',
+      "what to look for": "The title accurately reflects the content of the video,
+      "direction": "positive",
+      "weight": "low",
+      "detection heuristic": "Title length, word count, and use of capital letters"
+    },
+    {
+      "name": "Emotional valence/arousal',
+      "what to look for": "The emotional tone of the video, conveyed through visuals, sounds, and text",
+      "direction": "positive",
+      "weight": "low",
+      "detection heuristic": " Color, object count, and object distinctness"
+    },
+    {
+      "name": "Familiar vs. novel framing',
+      "what to look for": "The balance between familiar and novel elements in the video,
+      "direction": "positive",
+      "weight": "low",
+      "detection heuristic": "Familiarity of objects, setting, and theme"
+    },
+    {
+      "name": "Platform/platform fit',
+      "what to look for": "The video's suitability for the platform it is being viewed on,
+      "direction": "positive",
+      "weight": "low",
+      "detection heuristic": "Screen size, aspect ratio, and video orientation"
+    }
+  ],
+  "scoring recipe": "The ECR score is the sum of the weighted scores for each dimension, with the exception of the text overlay strategy, which is only considered if the video has text overlay. The final score is then normalized to [0,100].",
+  "caveats": ["The text overlay strategy is only relevant for videos with text overlay.", "The emotional valence/arousal is only relevant for videos with a clear emotional tone."]
+}
