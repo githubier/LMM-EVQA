@@ -1,0 +1,441 @@
+请绘制一张专业、简洁、论文级的系统流程图，主题为：
+
+“Interactive Recursive Self-Improvement for ECR Prediction”
+
+中文副标题：
+
+“基于维度总结、分治预测与反馈迭代的 ECR 递归自改进框架”
+
+整张图重点展示 RSI 的迭代流程、每个阶段的主要职责、使用的模型，以及模型所在的运行平台。不要加入过多工程细节、字段定义、命令或文件名称。
+
+采用横向 16:9 布局，背景必须是纯白色。将主流程画成从左到右、最后循环返回的闭环。
+
+一、运行平台与模型对应关系
+
+请在图的顶部或者右上角添加简洁的“Models and Platforms”图例，明确展示：
+
+1. GPT-5.6-Sol
+运行平台：
+MyFlicker
+
+角色：
+RSI Advisor，负责跨环节结果分析、优化决策和下一轮实验设计。
+
+显示格式建议：
+
+GPT-5.6-Sol
+MyFlicker
+RSI Advisor
+
+2. Qwen3.8-Max
+运行平台：
+Mario Agent
+
+角色：
+负责初始 ECR 维度总结、Map/Reduce 和语义级 Rubric 修订。
+
+显示格式建议：
+
+Qwen3.8-Max
+Mario Agent
+Rubric Distillation and Revision
+
+3. VideoLLaMA2-7B
+运行平台：
+LangBridge 开发机
+
+角色：
+默认本地 ECR Predictor。
+
+显示格式建议：
+
+VideoLLaMA2-7B
+LangBridge Machine
+Default ECR Predictor
+
+4. Qwen2.5-VL
+运行平台：
+LangBridge 开发机
+
+角色：
+可选本地 ECR Predictor。
+
+显示格式建议：
+
+Qwen2.5-VL
+LangBridge Machine
+Optional ECR Predictor
+
+5. Python Controller
+运行平台：
+LangBridge 开发机
+
+角色：
+负责数据划分、Prompt 构建、模型调度、指标计算、候选门控、状态管理和回滚。
+
+显示格式建议：
+
+Python Controller
+LangBridge Machine
+Execution, Evaluation and Gating
+
+请在所有涉及模型的流程节点中，同时标注“模型名称 + 运行平台”，不要只写模型名称。
+
+二、数据准备
+
+输入数据划分为：
+
+1. Train Set
+- 用于总结和更新 ECR 预测维度。
+
+2. Validation Feedback
+- 用于计算预测指标、分析错误并指导下一轮优化。
+
+3. Validation Selection
+- 用于独立验证候选方案是否真正提升。
+
+4. Test Set
+- 迭代过程中冻结；
+- 最终方案确定后只评估一次。
+
+该阶段由以下组件完成：
+
+Python Controller
+LangBridge 开发机
+
+主要职责：
+
+- 数据读取；
+- 固定数据划分；
+- 数据隔离；
+- 运行状态管理。
+
+三、初始维度总结
+
+使用：
+
+Qwen3.8-Max
+运行于 Mario Agent
+
+主要职责：
+
+- 分析带有 ECR 标签的 Train 视频；
+- 对比不同 ECR 水平的视频；
+- 总结影响 ECR 的可观察维度；
+- 确定维度权重、方向、模态、观察窗口和分组；
+- 通过 Map/Reduce 生成初始 Dynamic ECR Rubric。
+
+输出：
+
+“Initial Dynamic ECR Rubric”
+
+四、动态预测 Prompt 构建
+
+使用：
+
+Python Controller
+运行于 LangBridge 开发机
+
+主要职责：
+
+- 将 Dynamic ECR Rubric 转换成预测 Prompt；
+- 根据维度进行分治和分组；
+- 配置模态和视频观察窗口；
+- 配置维度评分和最终聚合方式。
+
+输出：
+
+“Dynamic Divide-and-Conquer Prediction Prompt”
+
+五、ECR 预测
+
+默认模型：
+
+VideoLLaMA2-7B
+运行于 LangBridge 开发机
+
+可选模型：
+
+Qwen2.5-VL
+运行于 LangBridge 开发机
+
+主要职责：
+
+- 根据动态 Prompt 分组分析视频；
+- 输出每个维度的评分和证据；
+- 聚合得到最终 ECR 预测。
+
+输出：
+
+- Dimension Scores；
+- Evidence；
+- Final ECR Prediction。
+
+可以使用一个预测器分支表示：
+
+VideoLLaMA2-7B
+Default
+
+或：
+
+Qwen2.5-VL
+Optional
+
+两个模型都位于同一个虚线容器中：
+
+“LangBridge Local Prediction Environment”
+
+六、预测评估与错误诊断
+
+使用：
+
+Python Controller
+运行于 LangBridge 开发机
+
+主要职责：
+
+- 计算 SRCC；
+- 计算 PLCC；
+- 计算 Final Score：
+
+Final Score = 0.6 × SRCC + 0.4 × PLCC
+
+- 分析预测错误；
+- 分析无效维度和冗余维度；
+- 比较 Correct、Shuffled、Constant 控制组；
+- 生成当前轮次诊断报告。
+
+输出：
+
+“Evaluation and Diagnostic Report”
+
+七、RSI 跨环节分析
+
+使用：
+
+GPT-5.6-Sol
+运行于 MyFlicker
+
+角色：
+
+“RSI Advisor”
+
+主要职责：
+
+- 综合分析当前 Rubric、预测结果和错误诊断；
+- 判断问题来自维度总结、分治、模态、窗口、预测 Prompt 或聚合方式；
+- 提出一个主要且可验证的改进假设；
+- 设计下一轮实验；
+- 生成结构化 Evolution Plan。
+
+输出：
+
+“Evolution Plan”
+
+在该节点中醒目标注：
+
+GPT-5.6-Sol
+MyFlicker
+Cross-stage RSI Analysis
+
+八、候选方案构建
+
+首先由以下组件校验 Evolution Plan：
+
+Python Controller
+运行于 LangBridge 开发机
+
+根据改进内容分成两条路径。
+
+路径 A：推理策略修改
+
+适用于修改：
+
+- 分治方式；
+- 模态；
+- 时间窗口；
+- 评分方式；
+- 聚合方式；
+- 预测 Prompt；
+- Predictor 组合。
+
+由以下组件直接生成 Candidate Strategy：
+
+Python Controller
+LangBridge 开发机
+
+路径 B：维度或总结逻辑修改
+
+适用于修改：
+
+- 维度总结 Prompt；
+- 训练样本选择；
+- Map/Reduce；
+- 维度新增、删除、拆分或合并；
+- 维度定义重写。
+
+使用：
+
+Qwen3.8-Max
+运行于 Mario Agent
+
+重新生成 Candidate Rubric。
+
+两条路径最终合并为：
+
+“Candidate Rubric + Candidate Strategy”
+
+九、候选方案验证
+
+候选方案使用相同的 ECR Predictor 再次执行预测：
+
+- VideoLLaMA2-7B，运行于 LangBridge 开发机；
+- 或 Qwen2.5-VL，运行于 LangBridge 开发机。
+
+分别在以下数据上评估：
+
+1. Validation Feedback
+- 检查候选方案是否带来开发集增益。
+
+2. Validation Selection
+- 独立验证候选方案是否真正泛化。
+
+使用：
+
+Python Controller
+运行于 LangBridge 开发机
+
+执行 Acceptance Gate，主要判断：
+
+- Feedback 指标是否提升；
+- Selection 指标是否提升或至少不退化；
+- Correct 是否优于 Shuffled；
+- Correct 是否优于 Constant；
+- 单个 Predictor 是否明显退化。
+
+十、接受或回滚
+
+如果通过 Acceptance Gate：
+
+ACCEPT
+
+- Candidate Rubric 成为新的 Best Rubric；
+- Candidate Strategy 成为新的 Active Strategy；
+- 记录本轮成功经验；
+- 进入下一轮 RSI。
+
+如果未通过 Acceptance Gate：
+
+REJECT AND ROLLBACK
+
+- 恢复上一轮 Rubric；
+- 恢复上一轮预测策略；
+- 恢复上一轮 Prompt；
+- 记录失败原因；
+- 进入下一轮 RSI。
+
+ACCEPT 和 REJECT 两条路径都循环返回到：
+
+“Dynamic Prediction Prompt Construction”
+
+或：
+
+“ECR Prediction”
+
+十一、停止与最终测试
+
+每轮结束后检查停止条件：
+
+- 是否达到最大迭代轮数；
+- 是否连续多轮没有提升；
+- 是否达到目标指标；
+- 是否达到预算上限；
+- 是否人工决定停止。
+
+如果继续：
+
+进入下一轮 RSI。
+
+如果停止：
+
+1. 冻结最佳 Rubric；
+2. 冻结最佳预测策略；
+3. 冻结最佳 Prompt 和 Predictor 配置；
+4. 解锁 Test Set；
+5. 在 Test Set 上只评估一次；
+6. 输出最终 SRCC、PLCC、Final Score 和 RSI 经验。
+
+十二、图中的核心闭环
+
+请清晰表现以下主循环：
+
+Train Videos
+→ Qwen3.8-Max on Mario Agent
+→ Dynamic ECR Rubric
+→ Python Controller on LangBridge
+→ VideoLLaMA2-7B / Qwen2.5-VL on LangBridge
+→ Python Evaluation on LangBridge
+→ GPT-5.6-Sol on MyFlicker
+→ Evolution Plan
+→ Candidate Rubric / Candidate Strategy
+→ Feedback and Selection Validation
+→ Accept or Rollback
+→ Next RSI Round
+
+在循环中心可以写：
+
+“Observe → Diagnose → Hypothesize → Experiment → Gate → Learn”
+
+中文：
+
+“观察 → 诊断 → 假设 → 实验 → 门控 → 沉淀”
+
+十三、视觉要求
+
+整体风格：
+
+- 专业论文插图；
+- 技术架构图；
+- 简洁、现代；
+- 不要卡通化；
+- 不要使用深色主题。
+
+背景要求：
+
+- 背景必须为纯白色；
+- 不要使用灰色、渐变或透明背景；
+- 所有容器内部也以白色或极浅色填充；
+- 保持适合论文打印的高对比度。
+
+推荐配色：
+
+- Qwen3.8-Max / Mario Agent：紫色；
+- GPT-5.6-Sol / MyFlicker：玫红色；
+- VideoLLaMA2-7B 和 Qwen2.5-VL / LangBridge：绿色；
+- Python Controller / LangBridge：蓝色；
+- 指标评估：橙色；
+- Accept：绿色；
+- Reject / Rollback：红色；
+- 数据集：浅蓝色或浅灰色；
+- Test Set：深灰色边框并带锁图标。
+
+平台容器：
+
+- 使用虚线边框表示运行平台；
+- MyFlicker、Mario Agent、LangBridge 开发机分别使用独立平台标签；
+- 同一平台上的模型可以放在同一个虚线容器中；
+- 模型节点中应同时显示模型名和平台名。
+
+绘图要求：
+
+- 主循环箭头必须明显；
+- 每个节点只保留阶段名称、主要职责、模型名称和运行平台；
+- 每个节点文字控制在 2～4 行；
+- 不展示 CLI 命令；
+- 不展示代码文件名；
+- 不展示 JSON 字段；
+- 不展示过细的工程实现；
+- 用分支箭头区分“推理策略修改”和“维度总结修改”；
+- 用绿色和红色路径区分 Accept 与 Rollback；
+- 明确标出 Test Set 在迭代期间被冻结；
+- 最终图片应适合放入论文、技术报告和汇报 PPT。

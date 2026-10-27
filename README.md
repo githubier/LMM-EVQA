@@ -52,6 +52,8 @@ Both models demonstrate competitive performance against state-of-the-art baselin
 
 The repository also contains follow-up SnapUGC experiments covering zero-shot prompting, 5D/12D divide-and-conquer scoring, and fusion of post-trained ECR predictions with 12D signals. See [`docs/snapugc_ecr_experiments.md`](docs/snapugc_ecr_experiments.md) for the recovered experiment designs, results, limitations, and recommended next steps.
 
+An interactive Recursive Self-Improvement controller now connects budgeted Mario Agent rubric distillation with dynamic local VideoLLaMA2/Qwen2.5-VL prediction, validation gating, and conversational iteration. See [`rsi/README.md`](rsi/README.md) for the workflow and commands.
+
 ## 📊 Dataset
 
 ### SnapUGC Dataset

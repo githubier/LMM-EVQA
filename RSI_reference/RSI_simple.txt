@@ -1,0 +1,271 @@
+请绘制一张简洁、专业、论文级的“方案概念图”，用于展示：
+
+Interactive Recursive Self-Improvement for ECR Prediction
+
+中文标题：
+
+“面向 ECR 预测的递归自改进方案”
+
+注意：这不是详细流程图。
+
+不要绘制大量步骤、判断节点、数据字段、控制条件或工程细节。整张图只需要让观看者快速理解：
+
+1. Qwen3.8-Max 总结 ECR 预测维度；
+2. VideoLLaMA2-7B / Qwen2.5-VL 根据维度预测 ECR；
+3. GPT-5.6-Sol 根据预测结果指导下一轮优化；
+4. 三者形成递归自改进闭环；
+5. Python Controller 为整个闭环提供执行和评估支持。
+
+## 一、整体布局
+
+采用横向 16:9 画布。
+
+背景必须是纯白色。
+
+整张图只保留三个主要模块，按照三角形或环形结构排列：
+
+1. 左上：维度总结；
+2. 右上：ECR 预测；
+3. 下方中央：RSI 分析与优化。
+
+三个模块之间使用三条简洁、明显的箭头连接，形成闭环：
+
+维度总结
+→ ECR 预测
+→ RSI 分析与优化
+→ 更新维度总结和预测策略
+
+不要画成包含大量矩形节点的传统流程图。
+
+可以将三个模块设计为三个较大的圆角卡片，或者三个简洁的圆形区域。
+
+## 二、模块一：ECR 维度总结
+
+模块标题：
+
+“ECR Dimension Distillation”
+“ECR 维度总结”
+
+使用模型与平台：
+
+Qwen3.8-Max
+Mario Agent
+
+模块内只保留一句职责说明：
+
+“从带标签的训练视频中总结并更新 ECR 预测维度”
+
+英文可以写：
+
+“Distill and update ECR dimensions from labeled training videos”
+
+该模块的输入可以用一个非常简洁的小图标表示：
+
+“Labeled Training Videos”
+
+输出用一个简洁的小标签表示：
+
+“Dynamic ECR Rubric”
+
+不要展示 Map/Reduce、维度字段、权重、模态、窗口等详细内容。
+
+## 三、模块二：ECR 分治预测
+
+模块标题：
+
+“Divide-and-Conquer ECR Prediction”
+“ECR 分治预测”
+
+使用模型与平台：
+
+VideoLLaMA2-7B / Qwen2.5-VL
+LangBridge 开发机
+
+模块内只保留一句职责说明：
+
+“根据动态维度分析视频并预测 ECR”
+
+英文可以写：
+
+“Predict ECR using dynamically distilled dimensions”
+
+输入：
+
+“Dynamic ECR Rubric + Videos”
+
+输出：
+
+“ECR Predictions”
+
+VideoLLaMA2-7B 是默认预测模型，Qwen2.5-VL 是可选预测模型。
+
+可以在模型名称旁使用非常简短的标记：
+
+VideoLLaMA2-7B（Default）
+Qwen2.5-VL（Optional）
+
+不要展示逐维评分、证据、置信度、聚合方式或 Prompt 细节。
+
+## 四、模块三：RSI 分析与优化
+
+模块标题：
+
+“RSI Analysis and Optimization”
+“RSI 分析与优化”
+
+使用模型与平台：
+
+GPT-5.6-Sol
+MyFlicker
+
+模块内只保留一句职责说明：
+
+“分析预测效果，决定下一轮如何优化维度和预测策略”
+
+英文可以写：
+
+“Analyze prediction results and guide the next optimization round”
+
+该模块接收：
+
+“Predictions + Evaluation Results”
+
+该模块输出：
+
+“Evolution Plan”
+
+Evolution Plan 通过两条简洁箭头返回：
+
+1. 返回“ECR 维度总结”模块：
+   表示更新维度总结方式和 Rubric；
+
+2. 返回“ECR 分治预测”模块：
+   表示更新分治、Prompt、模态、窗口或聚合策略。
+
+不要展示具体修改项列表，只用两个很短的箭头标签：
+
+“Update Rubric”
+
+“Update Prediction Strategy”
+
+## 五、Python 支撑层
+
+在三个核心模块下方放置一条简洁的横向底座，标题为：
+
+“Python Controller”
+“LangBridge 开发机”
+
+职责只写一行：
+
+“Data Management · Evaluation · Validation · Rollback”
+
+中文：
+
+“数据管理 · 指标评估 · 候选验证 · 状态回滚”
+
+Python Controller 是支撑层，不是第四个核心业务模块。
+
+使用细线连接三个主要模块，表示 Python 为整个 RSI 闭环提供运行支持。
+
+不要展开 Python 的具体功能，不要展示文件、命令、JSON、预算或 checkpoint。
+
+## 六、评估反馈的表示
+
+在“ECR 分治预测”和“RSI 分析与优化”之间，放置一个小型中间标签：
+
+“Evaluation Feedback”
+
+下面用小字写：
+
+“SRCC · PLCC · Final Score”
+
+它只用于表示预测结果会被评估并反馈给 GPT-5.6-Sol。
+
+不要把评估单独画成大型模块。
+
+## 七、最终需要表达的核心关系
+
+整张图需要让人一眼看懂以下关系：
+
+Qwen3.8-Max on Mario Agent
+负责总结和更新 ECR 维度
+
+↓
+
+VideoLLaMA2-7B / Qwen2.5-VL on LangBridge
+基于维度预测 ECR
+
+↓
+
+GPT-5.6-Sol on MyFlicker
+分析预测结果并设计下一轮优化
+
+↓
+
+将优化建议反馈给维度总结和 ECR 预测
+
+最终形成：
+
+“Dimension Distillation → ECR Prediction → RSI Optimization → Next Round”
+
+## 八、可以放在图中央的核心文字
+
+在三个模块构成的闭环中央写：
+
+“Recursive Self-Improvement”
+
+下面用较小字体写：
+
+“Distill → Predict → Evaluate → Evolve”
+
+中文也可以写：
+
+“总结 → 预测 → 评估 → 进化”
+
+## 九、视觉风格
+
+背景：
+
+- 必须是纯白色；
+- 不要使用深色背景；
+- 不要使用渐变背景；
+- 不要使用复杂纹理。
+
+整体风格：
+
+- 简洁；
+- 现代；
+- 论文级；
+- 技术方案概念图；
+- 适合研究汇报和 PPT；
+- 大量留白；
+- 高对比度；
+- 不要卡通化；
+- 不要堆叠文字。
+
+配色建议：
+
+- Qwen3.8-Max / Mario Agent：紫色；
+- VideoLLaMA2-7B / Qwen2.5-VL / LangBridge：绿色；
+- GPT-5.6-Sol / MyFlicker：玫红色；
+- Python Controller：蓝色；
+- Evaluation Feedback：橙色；
+- 箭头：深灰色。
+
+请控制整张图的复杂度：
+
+- 只保留 3 个核心模块；
+- 1 个底部 Python 支撑层；
+- 1 个小型 Evaluation Feedback 标签；
+- 每个核心模块最多 4 行文字；
+- 不添加额外步骤；
+- 不添加判断菱形；
+- 不添加 Accept/Reject 分支；
+- 不添加数据集划分细节；
+- 不添加 Test、Selection、Correct、Shuffled、Constant 等实验细节；
+- 不添加代码文件名；
+- 不添加 CLI 命令；
+- 不添加 JSON 字段；
+- 不要画成详细流程图。
+
+最终效果应该是一张一眼就能看懂的方案总览图，而不是工程执行流程图。
