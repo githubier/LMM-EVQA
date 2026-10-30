@@ -4,7 +4,7 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from rsi.mario import MarioClient, extract_json_object
+from rsi.mario import MarioAPIError, MarioClient, extract_json_object
 from rsi.rubric import (
     build_group_prompt, normalize_rubric, parse_group_answer, weighted_score,
 )
@@ -113,6 +113,32 @@ class RubricTests(unittest.TestCase):
 
 
 class MarioParsingTests(unittest.TestCase):
+    def test_busy_completion_interrupts_then_resends(self):
+        class BusyMario(MarioClient):
+            def __init__(self):
+                self.send_count = 0
+                self.interrupt_count = 0
+
+            def send_message(self, session_id, text, file_ids):
+                self.send_count += 1
+                self.asserted_files = list(file_ids)
+                if self.send_count == 1:
+                    raise MarioAPIError(409, {
+                        "type": "session_busy", "message": "interrupt first",
+                    })
+                return "turn-2"
+
+            def interrupt(self, session_id):
+                self.interrupt_count += 1
+
+        client = BusyMario()
+        turn_id, interrupted = client.send_completion_message("session", "continue")
+        self.assertEqual(turn_id, "turn-2")
+        self.assertTrue(interrupted)
+        self.assertEqual(client.send_count, 2)
+        self.assertEqual(client.interrupt_count, 1)
+        self.assertEqual(client.asserted_files, [])
+
     def test_completion_followup_reuses_session_without_files(self):
         class FakeMario(MarioClient):
             def __init__(self):

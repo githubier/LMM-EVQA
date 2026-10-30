@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import json
 import os
+import time
 from pathlib import Path
 from typing import Iterator
 
@@ -15,6 +16,20 @@ BASE_URLS = {
     "prt": "https://ee-mario.prt.kuaishou.com/mario/openapi",
     "staging": "https://kim-mario.staging.kuaishou.com/mario/openapi",
 }
+
+
+class MarioAPIError(RuntimeError):
+    def __init__(self, status_code: int, error: object):
+        self.status_code = status_code
+        self.error = error
+        super().__init__(
+            f"Mario API failed [{status_code}]: "
+            f"{json.dumps(error, ensure_ascii=False)}"
+        )
+
+    @property
+    def error_type(self) -> str | None:
+        return self.error.get("type") if isinstance(self.error, dict) else None
 
 
 class MarioClient:
@@ -38,10 +53,7 @@ class MarioClient:
             response.raise_for_status()
             raise RuntimeError(f"Mario returned non-JSON: {response.text[:300]}") from exc
         if not body.get("success", False):
-            raise RuntimeError(
-                f"Mario API failed [{response.status_code}]: "
-                f"{json.dumps(body, ensure_ascii=False)}"
-            )
+            raise MarioAPIError(response.status_code, body.get("error", body))
         return body["data"]
 
     def update_system_prompt(self, agent_id: str, prompt: str) -> None:
@@ -91,6 +103,26 @@ class MarioClient:
             timeout=self.timeout,
         ))
         return data.get("turn_id")
+
+    def interrupt(self, session_id: str) -> None:
+        self._check(self.session.post(
+            f"{self.base}/v1/sessions/{session_id}/events",
+            json={"events": [{"type": "user.interrupt"}]},
+            timeout=self.timeout,
+        ))
+
+    def send_completion_message(self, session_id: str, text: str) -> tuple[str | None, bool]:
+        """Send a no-file follow-up, interrupting a stale running turn if required."""
+        interrupted = False
+        try:
+            return self.send_message(session_id, text, []), interrupted
+        except MarioAPIError as exc:
+            if exc.status_code != 409 or exc.error_type != "session_busy":
+                raise
+            self.interrupt(session_id)
+            interrupted = True
+            time.sleep(1)
+            return self.send_message(session_id, text, []), interrupted
 
     def stream(self, session_id: str, turn_id: str | None) -> Iterator[dict]:
         params = {"after": 0}
@@ -164,7 +196,10 @@ class MarioClient:
                         f"{completion_retries} completion follow-ups; "
                         f"session_id={session_id}; responses={turns}"
                     )
-                turn_id = self.send_message(session_id, completion_prompt, [])
+                turn_id, interrupted = self.send_completion_message(
+                    session_id, completion_prompt
+                )
+                turns[-1]["interrupted_stale_turn"] = interrupted
         raise AssertionError("unreachable")
 
 
