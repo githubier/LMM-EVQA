@@ -4,7 +4,7 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from rsi.mario import extract_json_object
+from rsi.mario import MarioClient, extract_json_object
 from rsi.rubric import (
     build_group_prompt, normalize_rubric, parse_group_answer, weighted_score,
 )
@@ -113,6 +113,39 @@ class RubricTests(unittest.TestCase):
 
 
 class MarioParsingTests(unittest.TestCase):
+    def test_completion_followup_reuses_session_without_files(self):
+        class FakeMario(MarioClient):
+            def __init__(self):
+                self.sent = []
+                self.turns = iter([
+                    ("still analyzing", "end_turn"),
+                    ('{"dimensions": []}', "end_turn"),
+                ])
+
+            def update_system_prompt(self, agent_id, prompt):
+                return None
+
+            def upload_file(self, path):
+                return f"file:{path}"
+
+            def create_session(self, agent_id, title):
+                return "session-1"
+
+            def send_message(self, session_id, text, file_ids):
+                self.sent.append((session_id, text, list(file_ids)))
+                return f"turn-{len(self.sent)}"
+
+            def _collect_turn(self, session_id, turn_id):
+                return next(self.turns)
+
+        client = FakeMario()
+        result, trace = client.run("agent", "system", "task", ["video.mp4"], "title")
+        self.assertEqual(result, {"dimensions": []})
+        self.assertEqual(trace["completion_followups"], 1)
+        self.assertEqual(client.sent[0][2], ["file:video.mp4"])
+        self.assertEqual(client.sent[1][2], [])
+        self.assertEqual({item["turn_id"] for item in trace["turns"]}, {"turn-1", "turn-2"})
+
     def test_extract_json_with_surrounding_text(self):
         self.assertEqual(extract_json_object("before ```json\n{\"ok\": true}\n``` after"), {"ok": True})
 

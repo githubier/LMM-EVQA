@@ -110,13 +110,7 @@ class MarioClient:
                 except json.JSONDecodeError:
                     continue
 
-    def run(self, agent_id: str, system_prompt: str, user_prompt: str,
-            files: list[str | Path], title: str) -> tuple[dict, dict]:
-        # Mario exposes a persistent system prompt update, not a per-turn system field.
-        self.update_system_prompt(agent_id, system_prompt)
-        file_ids = [self.upload_file(path) for path in files]
-        session_id = self.create_session(agent_id, title)
-        turn_id = self.send_message(session_id, user_prompt, file_ids)
+    def _collect_turn(self, session_id: str, turn_id: str | None) -> tuple[str, str | None]:
         chunks = []
         stop_reason = None
         for event in self.stream(session_id, turn_id):
@@ -131,13 +125,47 @@ class MarioClient:
             elif kind == "session.status_idle":
                 stop_reason = event.get("stop_reason", {}).get("type")
                 break
-        text = "".join(chunks).strip()
-        return extract_json_object(text), {
-            "session_id": session_id,
-            "turn_id": turn_id,
-            "stop_reason": stop_reason,
-            "uploaded_file_count": len(file_ids),
-        }
+        return "".join(chunks).strip(), stop_reason
+
+    def run(self, agent_id: str, system_prompt: str, user_prompt: str,
+            files: list[str | Path], title: str,
+            completion_retries: int = 2) -> tuple[dict, dict]:
+        # Mario exposes a persistent system prompt update, not a per-turn system field.
+        self.update_system_prompt(agent_id, system_prompt)
+        file_ids = [self.upload_file(path) for path in files]
+        session_id = self.create_session(agent_id, title)
+        turn_id = self.send_message(session_id, user_prompt, file_ids)
+        turns = []
+        completion_prompt = (
+            "继续完成刚才的任务。不要再描述分析过程；请现在直接输出任务要求的完整、"
+            "合法 JSON 对象，不能输出 Markdown、前言、后记或中间状态。"
+        )
+        for attempt in range(completion_retries + 1):
+            text, stop_reason = self._collect_turn(session_id, turn_id)
+            turns.append({
+                "turn_id": turn_id,
+                "stop_reason": stop_reason,
+                "response_preview": text[:1000],
+            })
+            try:
+                result = extract_json_object(text)
+                return result, {
+                    "session_id": session_id,
+                    "turn_id": turn_id,
+                    "stop_reason": stop_reason,
+                    "uploaded_file_count": len(file_ids),
+                    "completion_followups": attempt,
+                    "turns": turns,
+                }
+            except ValueError:
+                if attempt >= completion_retries:
+                    raise ValueError(
+                        "Mario produced no JSON after "
+                        f"{completion_retries} completion follow-ups; "
+                        f"session_id={session_id}; responses={turns}"
+                    )
+                turn_id = self.send_message(session_id, completion_prompt, [])
+        raise AssertionError("unreachable")
 
 
 def extract_json_object(text: str) -> dict:
