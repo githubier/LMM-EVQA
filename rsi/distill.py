@@ -66,7 +66,10 @@ def load_rows(path: str, video_dir: str, limit: int, seed: int) -> list[dict]:
                 continue
             identifier = str(row.get("Id", "")).strip()
             candidates = [video_root / f"{identifier}{ext}" for ext in extensions]
-            video = next((item for item in candidates if item.is_file()), None)
+            video = next(
+                (item for item in candidates if item.is_file() and item.stat().st_size > 0),
+                None,
+            )
             if not video:
                 continue
             item = {

@@ -1,3 +1,4 @@
+import csv
 import json
 import tempfile
 import unittest
@@ -8,6 +9,7 @@ from rsi.rubric import (
     build_group_prompt, normalize_rubric, parse_group_answer, weighted_score,
 )
 from rsi.strategy import default_strategy, normalize_strategy
+from rsi.distill import load_rows
 
 
 def sample_rubric():
@@ -56,6 +58,21 @@ class RubricTests(unittest.TestCase):
         strategy["call_groups"] = [["D0"]]
         with self.assertRaises(ValueError):
             normalize_strategy(strategy, rubric)
+    def test_training_loader_skips_zero_byte_video(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            (root / "good.mp4").write_bytes(b"video")
+            (root / "empty.mp4").touch()
+            csv_path = root / "train.csv"
+            with csv_path.open("w", encoding="utf-8", newline="") as stream:
+                writer = csv.DictWriter(
+                    stream, fieldnames=["Id", "Title", "Description", "ECR"]
+                )
+                writer.writeheader()
+                writer.writerow({"Id": "good", "Title": "", "Description": "", "ECR": 0.8})
+                writer.writerow({"Id": "empty", "Title": "", "Description": "", "ECR": 0.2})
+            rows = load_rows(str(csv_path), str(root), limit=10, seed=1)
+            self.assertEqual([item["id"] for item in rows], ["good"])
 
 
 class MarioParsingTests(unittest.TestCase):
