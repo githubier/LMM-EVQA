@@ -50,6 +50,19 @@ class MarioClient:
             timeout=self.timeout,
         ))
 
+    def preflight(self, agent_id: str, system_prompt: str | None = None) -> dict:
+        """Verify Agent visibility without uploading files or starting inference."""
+        result = {"agent_id": agent_id, "base_url": self.base}
+        session_id = self.create_session(agent_id, "ECR RSI preflight")
+        result["create_session"] = "ok"
+        result["session_id"] = session_id
+        if system_prompt is not None:
+            self.update_system_prompt(agent_id, system_prompt)
+            result["update_system_prompt"] = "ok"
+        else:
+            result["update_system_prompt"] = "skipped"
+        return result
+
     def upload_file(self, path: str | Path) -> str:
         path = Path(path)
         headers = {

@@ -74,10 +74,20 @@ def normalize_rubric(raw: dict[str, Any]) -> dict[str, Any]:
     if not isinstance(groups, list):
         raise ValueError("recommended_call_groups must be a list")
     checked_groups = []
+    group_metadata = []
     seen = set()
-    for group in groups:
-        if not isinstance(group, list) or not group:
-            raise ValueError("each call group must be a non-empty key list")
+    for group_index, group in enumerate(groups, 1):
+        metadata = None
+        if isinstance(group, dict):
+            metadata = dict(group)
+            group = group.get("dimension_keys")
+        if not isinstance(group, list) or not group or not all(
+            isinstance(key, str) and key for key in group
+        ):
+            raise ValueError(
+                "each call group must be a non-empty key list or an object "
+                "containing dimension_keys"
+            )
         unknown = set(group) - used
         if unknown:
             raise ValueError(f"call group has unknown dimensions: {sorted(unknown)}")
@@ -86,8 +96,21 @@ def normalize_rubric(raw: dict[str, Any]) -> dict[str, Any]:
             raise ValueError(f"dimensions occur in multiple groups: {sorted(duplicate)}")
         seen.update(group)
         checked_groups.append(group)
+        if metadata is not None:
+            metadata["dimension_keys"] = group
+            group_metadata.append(metadata)
+        else:
+            group_metadata.append({
+                "group_key": f"group_{group_index}",
+                "dimension_keys": group,
+            })
     for key in [item["key"] for item in normalized if item["key"] not in seen]:
         checked_groups.append([key])
+        group_metadata.append({
+            "group_key": f"group_{len(group_metadata) + 1}",
+            "dimension_keys": [key],
+            "source": "added_by_normalizer",
+        })
 
     return {
         "schema_version": "rsi-rubric-v1",
@@ -96,6 +119,7 @@ def normalize_rubric(raw: dict[str, Any]) -> dict[str, Any]:
         "few_shot_calibration": raw.get("few_shot_calibration") or [],
         "caveats": [str(x) for x in raw.get("caveats") or []],
         "recommended_call_groups": checked_groups,
+        "call_group_metadata": group_metadata,
         "revision_summary": str(raw.get("revision_summary", "")).strip(),
     }
 

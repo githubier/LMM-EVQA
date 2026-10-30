@@ -58,6 +58,22 @@ class RubricTests(unittest.TestCase):
         strategy["call_groups"] = [["D0"]]
         with self.assertRaises(ValueError):
             normalize_strategy(strategy, rubric)
+    def test_accepts_rich_call_group_objects(self):
+        raw = sample_rubric()
+        raw["recommended_call_groups"] = [
+            {
+                "group_key": "visual",
+                "dimension_keys": [f"D{i}", f"D{i + 1}"],
+                "window_seconds": 5,
+                "modality_focus": "video",
+            }
+            for i in range(0, 8, 2)
+        ]
+        rubric = normalize_rubric(raw)
+        self.assertEqual(rubric["recommended_call_groups"][0], ["D0", "D1"])
+        self.assertEqual(rubric["call_group_metadata"][0]["group_key"], "visual")
+        self.assertEqual(rubric["call_group_metadata"][0]["window_seconds"], 5)
+
     def test_training_loader_skips_zero_byte_video(self):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)

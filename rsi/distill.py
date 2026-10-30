@@ -182,12 +182,24 @@ def main() -> None:
     traced_groups = {item.get("group") for item in provenance if isinstance(item, dict)}
     for index, samples in enumerate(groups, 1):
         artifact = out / f"map_{index:03d}.json"
+        raw_artifact = out / f"map_{index:03d}_raw.json"
         if args.resume and artifact.exists():
             map_rubrics.append(normalize_rubric(json.loads(artifact.read_text(encoding="utf-8"))))
             if index not in traced_groups:
                 provenance.append({
                     "group": index, "ids": [item["id"] for item in samples],
                     "status": "recovered_artifact_without_trace",
+                })
+                atomic_json(provenance_path, provenance)
+            continue
+        if args.resume and raw_artifact.exists():
+            rubric = normalize_rubric(json.loads(raw_artifact.read_text(encoding="utf-8")))
+            atomic_json(artifact, rubric)
+            map_rubrics.append(rubric)
+            if index not in traced_groups:
+                provenance.append({
+                    "group": index, "ids": [item["id"] for item in samples],
+                    "status": "recovered_from_raw",
                 })
                 atomic_json(provenance_path, provenance)
             continue
@@ -209,7 +221,7 @@ def main() -> None:
             [item["video"] for item in samples],
             f"ECR RSI round {args.round} map {index}",
         )
-        atomic_json(out / f"map_{index:03d}_raw.json", raw)
+        atomic_json(raw_artifact, raw)
         rubric = normalize_rubric(raw)
         atomic_json(artifact, rubric)
         map_rubrics.append(rubric)
