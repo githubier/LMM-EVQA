@@ -75,34 +75,55 @@ def normalize_rubric(raw: dict[str, Any]) -> dict[str, Any]:
         raise ValueError("recommended_call_groups must be a list")
     checked_groups = []
     group_metadata = []
+    grouping_notes = []
     seen = set()
     for group_index, group in enumerate(groups, 1):
         metadata = None
         if isinstance(group, dict):
             metadata = dict(group)
-            group = group.get("dimension_keys")
-        if not isinstance(group, list) or not group or not all(
-            isinstance(key, str) and key for key in group
-        ):
-            raise ValueError(
-                "each call group must be a non-empty key list or an object "
-                "containing dimension_keys"
+            group = next(
+                (
+                    group.get(alias)
+                    for alias in ("dimension_keys", "keys", "dimensions", "members")
+                    if isinstance(group.get(alias), list)
+                ),
+                None,
             )
-        unknown = set(group) - used
+            if "group_key" not in metadata:
+                for alias in ("group_id", "name", "id"):
+                    if metadata.get(alias):
+                        metadata["group_key"] = str(metadata[alias])
+                        break
+        if not isinstance(group, list):
+            grouping_notes.append(f"ignored call group {group_index}: no key list")
+            continue
+        candidate_keys = [key for key in group if isinstance(key, str) and key]
+        unknown = [key for key in candidate_keys if key not in used]
+        duplicate = [key for key in candidate_keys if key in seen]
+        accepted = [key for key in candidate_keys if key in used and key not in seen]
         if unknown:
-            raise ValueError(f"call group has unknown dimensions: {sorted(unknown)}")
-        duplicate = set(group) & seen
+            grouping_notes.append(
+                f"call group {group_index}: ignored unknown keys {unknown}"
+            )
         if duplicate:
-            raise ValueError(f"dimensions occur in multiple groups: {sorted(duplicate)}")
-        seen.update(group)
-        checked_groups.append(group)
+            grouping_notes.append(
+                f"call group {group_index}: ignored duplicate keys {duplicate}"
+            )
+        if not accepted:
+            grouping_notes.append(f"ignored empty call group {group_index}")
+            continue
+        seen.update(accepted)
+        checked_groups.append(accepted)
         if metadata is not None:
-            metadata["dimension_keys"] = group
+            metadata["dimension_keys"] = accepted
+            for alias in ("keys", "dimensions", "members", "group_id", "name", "id"):
+                metadata.pop(alias, None)
+            metadata.setdefault("group_key", f"group_{group_index}")
             group_metadata.append(metadata)
         else:
             group_metadata.append({
                 "group_key": f"group_{group_index}",
-                "dimension_keys": group,
+                "dimension_keys": accepted,
             })
     for key in [item["key"] for item in normalized if item["key"] not in seen]:
         checked_groups.append([key])
@@ -111,6 +132,7 @@ def normalize_rubric(raw: dict[str, Any]) -> dict[str, Any]:
             "dimension_keys": [key],
             "source": "added_by_normalizer",
         })
+        grouping_notes.append(f"added singleton call group for missing key {key}")
 
     return {
         "schema_version": "rsi-rubric-v1",
@@ -120,6 +142,7 @@ def normalize_rubric(raw: dict[str, Any]) -> dict[str, Any]:
         "caveats": [str(x) for x in raw.get("caveats") or []],
         "recommended_call_groups": checked_groups,
         "call_group_metadata": group_metadata,
+        "normalization_notes": grouping_notes,
         "revision_summary": str(raw.get("revision_summary", "")).strip(),
     }
 

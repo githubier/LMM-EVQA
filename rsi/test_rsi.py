@@ -46,11 +46,16 @@ class RubricTests(unittest.TestCase):
         self.assertEqual(parsed["D0"]["score"], 0.25)
         self.assertEqual(parsed["D1"]["score"], 0.75)
 
-    def test_rejects_duplicate_group_keys(self):
+    def test_repairs_duplicate_group_keys(self):
         raw = sample_rubric()
-        raw["recommended_call_groups"] = [["D0"], ["D0"]]
-        with self.assertRaises(ValueError):
-            normalize_rubric(raw)
+        raw["recommended_call_groups"] = [["D0", "D1"], ["D0", "D2"]]
+        rubric = normalize_rubric(raw)
+        flattened = [
+            key for group in rubric["recommended_call_groups"] for key in group
+        ]
+        self.assertEqual(len(flattened), len(set(flattened)))
+        self.assertEqual(set(flattened), {f"D{i}" for i in range(8)})
+        self.assertTrue(any("duplicate" in note for note in rubric["normalization_notes"]))
 
     def test_strategy_must_cover_every_dimension(self):
         rubric = normalize_rubric(sample_rubric())
@@ -73,6 +78,22 @@ class RubricTests(unittest.TestCase):
         self.assertEqual(rubric["recommended_call_groups"][0], ["D0", "D1"])
         self.assertEqual(rubric["call_group_metadata"][0]["group_key"], "visual")
         self.assertEqual(rubric["call_group_metadata"][0]["window_seconds"], 5)
+
+    def test_accepts_alternative_rich_group_keys(self):
+        raw = sample_rubric()
+        raw["recommended_call_groups"] = [
+            {
+                "group_id": f"G{i}",
+                "keys": [f"D{i}", f"D{i + 1}"],
+                "call": "one multimodal call",
+            }
+            for i in range(0, 8, 2)
+        ]
+        rubric = normalize_rubric(raw)
+        self.assertEqual(rubric["recommended_call_groups"][0], ["D0", "D1"])
+        self.assertEqual(rubric["call_group_metadata"][0]["group_key"], "G0")
+        self.assertNotIn("keys", rubric["call_group_metadata"][0])
+        self.assertNotIn("group_id", rubric["call_group_metadata"][0])
 
     def test_training_loader_skips_zero_byte_video(self):
         with tempfile.TemporaryDirectory() as directory:

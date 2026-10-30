@@ -28,7 +28,7 @@ MAP_TEMPLATE = """这是 RSI 第 {round_index} 轮的第 {group_index} 个 Map �
 请对比 HIGH 与 LOW 样本，输出 8~14 维候选 rubric。JSON 必须包含：
 - dimensions: 每项含 key、name、what_to_look_for、direction(positive/negative/u_shaped)、weight_0_1、modality(video/audio/audio_visual/text/multimodal)、window_seconds(0,30]、detection_heuristic；判分锚点必须统一为 0=不利于继续观看、1=有利于继续观看，direction 只描述原始观察信号与 ECR 的关系；
 - scoring_formula；few_shot_calibration；caveats；
-- recommended_call_groups: 用 key 将互补且观察窗口接近的维度分成调用组，每个 key 恰好出现一次；
+- recommended_call_groups: 必须是对象数组；每个对象必须且只能用 group_key、dimension_keys、window_seconds、modality_focus、call_purpose 这些字段，其中 dimension_keys 是字符串数组；禁止使用 group_id 或 keys 作为字段名；每个维度 key 恰好出现一次；
 - revision_summary。
 每个判分标准必须包含低/中/高锚点，并引用本组至少两个不同样本的可观察证据。
 {advisor}
@@ -38,7 +38,7 @@ MAP_TEMPLATE = """这是 RSI 第 {round_index} 轮的第 {group_index} 个 Map �
 REDUCE_TEMPLATE = """这是 RSI 第 {round_index} 轮的 Reduce。以下是 {count} 个独立 Map rubric：
 {rubrics}
 
-融合为一个最终 JSON rubric。保留跨组稳定信号，去除同义重复；输出 8~14 个互补维度，权重和应为 1；为每个维度确定主要模态和 (0,30] 秒观察窗口；所有维度评分统一为 0=不利于继续观看、1=有利于继续观看；recommended_call_groups 中每个 key 恰好出现一次。不要虚构没有出现在 Map 结果中的视频证据。只输出 JSON。
+融合为一个最终 JSON rubric。保留跨组稳定信号，去除同义重复；输出 8~14 个互补维度，权重和应为 1；为每个维度确定主要模态和 (0,30] 秒观察窗口；所有维度评分统一为 0=不利于继续观看、1=有利于继续观看；recommended_call_groups 必须是对象数组，每个对象只使用 group_key、dimension_keys、window_seconds、modality_focus、call_purpose，其中 dimension_keys 为字符串数组且每个维度 key 恰好出现一次，禁止使用 group_id 或 keys 字段。不要虚构没有出现在 Map 结果中的视频证据。只输出 JSON。
 {advisor}
 {previous}
 """
