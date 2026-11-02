@@ -35,13 +35,16 @@ MAP_TEMPLATE = """这是 RSI 第 {round_index} 轮的第 {group_index} 个 Map �
 {previous}
 """
 
-REDUCE_TEMPLATE = """这是 RSI 第 {round_index} 轮的 Reduce。以下是 {count} 个独立 Map rubric：
+REDUCE_TEMPLATE = """这是 RSI 第 {round_index} 轮的 {stage}。以下是 {count} 个独立候选 rubric：
 {rubrics}
 
-融合为一个最终 JSON rubric。保留跨组稳定信号，去除同义重复；输出 8~14 个互补维度，权重和应为 1；为每个维度确定主要模态和 (0,30] 秒观察窗口；所有维度评分统一为 0=不利于继续观看、1=有利于继续观看；recommended_call_groups 必须是对象数组，每个对象只使用 group_key、dimension_keys、window_seconds、modality_focus、call_purpose，其中 dimension_keys 为字符串数组且每个维度 key 恰好出现一次，禁止使用 group_id 或 keys 字段。不要虚构没有出现在 Map 结果中的视频证据。只输出 JSON。
+融合为一个最终 JSON rubric。保留跨组稳定信号，去除同义重复；输出 8~14 个互补维度，权重和应为 1；为每个维度确定主要模态和 (0,30] 秒观察窗口；所有维度评分统一为 0=不利于继续观看、1=有利于继续观看；recommended_call_groups 必须是对象数组，每个对象只使用 group_key、dimension_keys、window_seconds、modality_focus、call_purpose，其中 dimension_keys 为字符串数组且每个维度 key 恰好出现一次，禁止使用 group_id 或 keys 字段。不要虚构没有出现在候选结果中的视频证据。只输出 JSON。
 {advisor}
 {previous}
 """
+
+REDUCE_BATCH_SIZE = 3
+MAX_MARIO_MESSAGE_CHARS = 45000
 
 
 def atomic_json(path: Path, value: object) -> None:
@@ -109,6 +112,94 @@ def compact_rubric(rubric: dict) -> dict:
         "recommended_call_groups": rubric["recommended_call_groups"],
         "caveats": rubric["caveats"],
     }
+
+
+def build_reduce_prompt(
+    rubrics: list[dict], round_index: int, stage: str,
+    advisor: str, previous: str,
+) -> str:
+    summaries = "\n\n".join(
+        f"CANDIDATE {index}:\n{json.dumps(compact_rubric(item), ensure_ascii=False)}"
+        for index, item in enumerate(rubrics, 1)
+    )
+    prompt = REDUCE_TEMPLATE.format(
+        round_index=round_index, stage=stage, count=len(rubrics),
+        rubrics=summaries, advisor=advisor, previous=previous,
+    )
+    if len(prompt) > MAX_MARIO_MESSAGE_CHARS:
+        raise ValueError(
+            f"{stage} prompt has {len(prompt)} characters, exceeding the safe "
+            f"Mario limit {MAX_MARIO_MESSAGE_CHARS}; reduce the batch size"
+        )
+    return prompt
+
+
+def reduce_hierarchically(
+    client: MarioClient, agent_id: str, rubrics: list[dict], out: Path,
+    round_index: int, advisor: str, previous: str,
+) -> tuple[dict, dict]:
+    """Recursively reduce in resumable batches below Mario's message limit."""
+    current = list(rubrics)
+    all_traces = []
+    level = 1
+    while len(current) > REDUCE_BATCH_SIZE:
+        next_level = []
+        for start in range(0, len(current), REDUCE_BATCH_SIZE):
+            batch = current[start:start + REDUCE_BATCH_SIZE]
+            batch_number = start // REDUCE_BATCH_SIZE + 1
+            if len(batch) == 1:
+                next_level.append(batch[0])
+                all_traces.append({
+                    "level": level, "batch": batch_number,
+                    "status": "singleton_passthrough",
+                })
+                continue
+            prefix = f"reduce_level_{level:02d}_batch_{batch_number:03d}"
+            artifact = out / f"{prefix}.json"
+            raw_artifact = out / f"{prefix}_raw.json"
+            trace_artifact = out / f"{prefix}_trace.json"
+            if artifact.exists():
+                reduced = normalize_rubric(json.loads(artifact.read_text(encoding="utf-8")))
+                trace = {"level": level, "batch": batch_number, "status": "reused_standard"}
+            elif raw_artifact.exists():
+                reduced = normalize_rubric(json.loads(raw_artifact.read_text(encoding="utf-8")))
+                atomic_json(artifact, reduced)
+                trace = {"level": level, "batch": batch_number, "status": "recovered_from_raw"}
+            else:
+                prompt = build_reduce_prompt(
+                    batch, round_index,
+                    f"hierarchical reduce level {level} batch {batch_number}",
+                    advisor, "",
+                )
+                raw, mario_trace = client.run(
+                    agent_id, SYSTEM_PROMPT, prompt, [],
+                    f"ECR RSI round {round_index} reduce L{level} B{batch_number}",
+                )
+                atomic_json(raw_artifact, raw)
+                reduced = normalize_rubric(raw)
+                atomic_json(artifact, reduced)
+                atomic_json(trace_artifact, mario_trace)
+                trace = {
+                    "level": level, "batch": batch_number,
+                    "status": "success", **mario_trace,
+                }
+            next_level.append(reduced)
+            all_traces.append(trace)
+        current = next_level
+        level += 1
+
+    final_prompt = build_reduce_prompt(
+        current, round_index, "final reduce", advisor, previous,
+    )
+    raw, final_trace = client.run(
+        agent_id, SYSTEM_PROMPT, final_prompt, [],
+        f"ECR RSI round {round_index} final reduce",
+    )
+    atomic_json(out / "reduce_raw.json", raw)
+    final = normalize_rubric(raw)
+    final_trace["hierarchical_batches"] = all_traces
+    final_trace["levels"] = level
+    return final, final_trace
 
 
 def main() -> None:
@@ -231,19 +322,9 @@ def main() -> None:
         })
         atomic_json(provenance_path, provenance)
 
-    summaries = "\n\n".join(
-        f"MAP {index}:\n{json.dumps(compact_rubric(item), ensure_ascii=False)}"
-        for index, item in enumerate(map_rubrics, 1)
+    final, trace = reduce_hierarchically(
+        client, args.agent_id, map_rubrics, out, args.round, advisor, previous
     )
-    raw, trace = client.run(
-        args.agent_id, SYSTEM_PROMPT,
-        REDUCE_TEMPLATE.format(
-            round_index=args.round, count=len(map_rubrics), rubrics=summaries,
-            advisor=advisor, previous=previous,
-        ), [], f"ECR RSI round {args.round} reduce",
-    )
-    atomic_json(out / "reduce_raw.json", raw)
-    final = normalize_rubric(raw)
     atomic_json(out / "final_rubric.json", final)
     atomic_json(out / "reduce_trace.json", trace)
     atomic_json(manifest_path, {

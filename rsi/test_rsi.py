@@ -9,7 +9,9 @@ from rsi.rubric import (
     build_group_prompt, normalize_rubric, parse_group_answer, weighted_score,
 )
 from rsi.strategy import default_strategy, normalize_strategy
-from rsi.distill import load_rows
+from rsi.distill import (
+    MAX_MARIO_MESSAGE_CHARS, REDUCE_BATCH_SIZE, build_reduce_prompt, load_rows,
+)
 
 
 def sample_rubric():
@@ -94,6 +96,18 @@ class RubricTests(unittest.TestCase):
         self.assertEqual(rubric["call_group_metadata"][0]["group_key"], "G0")
         self.assertNotIn("keys", rubric["call_group_metadata"][0])
         self.assertNotIn("group_id", rubric["call_group_metadata"][0])
+
+    def test_reduce_prompt_enforces_character_limit(self):
+        rubric = normalize_rubric(sample_rubric())
+        prompt = build_reduce_prompt(
+            [rubric, rubric, rubric], 1, "test reduce", "advisor", "",
+        )
+        self.assertLessEqual(len(prompt), MAX_MARIO_MESSAGE_CHARS)
+        oversized = json.loads(json.dumps(rubric))
+        oversized["dimensions"][0]["detection_heuristic"] = "x" * MAX_MARIO_MESSAGE_CHARS
+        with self.assertRaises(ValueError):
+            build_reduce_prompt([oversized], 1, "oversized", "", "")
+        self.assertEqual(REDUCE_BATCH_SIZE, 3)
 
     def test_training_loader_skips_zero_byte_video(self):
         with tempfile.TemporaryDirectory() as directory:
