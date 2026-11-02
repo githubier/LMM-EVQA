@@ -44,7 +44,9 @@ REDUCE_TEMPLATE = """这是 RSI 第 {round_index} 轮的 {stage}。以下是 {co
 """
 
 REDUCE_BATCH_SIZE = 3
-MAX_MARIO_MESSAGE_CHARS = 45000
+DEEP_REDUCE_BATCH_SIZE = 2
+MAX_MARIO_MESSAGE_BYTES = 60000
+REDUCE_HEURISTIC_CHARS = 240
 
 
 def atomic_json(path: Path, value: object) -> None:
@@ -106,12 +108,20 @@ def select_groups(rows: list[dict], groups: int, videos_per_group: int) -> list[
 
 
 def compact_rubric(rubric: dict) -> dict:
-    return {
-        "dimensions": rubric["dimensions"],
-        "scoring_formula": rubric["scoring_formula"],
-        "recommended_call_groups": rubric["recommended_call_groups"],
-        "caveats": rubric["caveats"],
-    }
+    """Keep cross-candidate semantics while bounding recursive Reduce growth."""
+    dimensions = []
+    for item in rubric["dimensions"]:
+        dimensions.append({
+            "key": item["key"],
+            "name": item["name"],
+            "what_to_look_for": item["what_to_look_for"],
+            "direction": item["direction"],
+            "weight_0_1": item["weight_0_1"],
+            "modality": item["modality"],
+            "window_seconds": item["window_seconds"],
+            "detection_heuristic": item["detection_heuristic"][:REDUCE_HEURISTIC_CHARS],
+        })
+    return {"dimensions": dimensions}
 
 
 def build_reduce_prompt(
@@ -126,10 +136,11 @@ def build_reduce_prompt(
         round_index=round_index, stage=stage, count=len(rubrics),
         rubrics=summaries, advisor=advisor, previous=previous,
     )
-    if len(prompt) > MAX_MARIO_MESSAGE_CHARS:
+    prompt_bytes = len(prompt.encode("utf-8"))
+    if prompt_bytes > MAX_MARIO_MESSAGE_BYTES:
         raise ValueError(
-            f"{stage} prompt has {len(prompt)} characters, exceeding the safe "
-            f"Mario limit {MAX_MARIO_MESSAGE_CHARS}; reduce the batch size"
+            f"{stage} prompt has {prompt_bytes} UTF-8 bytes, exceeding the safe "
+            f"Mario database limit {MAX_MARIO_MESSAGE_BYTES}; reduce the batch size"
         )
     return prompt
 
@@ -142,11 +153,12 @@ def reduce_hierarchically(
     current = list(rubrics)
     all_traces = []
     level = 1
-    while len(current) > REDUCE_BATCH_SIZE:
+    while len(current) > DEEP_REDUCE_BATCH_SIZE:
+        batch_size = REDUCE_BATCH_SIZE if level == 1 else DEEP_REDUCE_BATCH_SIZE
         next_level = []
-        for start in range(0, len(current), REDUCE_BATCH_SIZE):
-            batch = current[start:start + REDUCE_BATCH_SIZE]
-            batch_number = start // REDUCE_BATCH_SIZE + 1
+        for start in range(0, len(current), batch_size):
+            batch = current[start:start + batch_size]
+            batch_number = start // batch_size + 1
             if len(batch) == 1:
                 next_level.append(batch[0])
                 all_traces.append({

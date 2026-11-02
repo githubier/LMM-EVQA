@@ -10,7 +10,8 @@ from rsi.rubric import (
 )
 from rsi.strategy import default_strategy, normalize_strategy
 from rsi.distill import (
-    MAX_MARIO_MESSAGE_CHARS, REDUCE_BATCH_SIZE, build_reduce_prompt, load_rows,
+    DEEP_REDUCE_BATCH_SIZE, MAX_MARIO_MESSAGE_BYTES, REDUCE_BATCH_SIZE,
+    build_reduce_prompt, load_rows,
 )
 
 
@@ -102,12 +103,15 @@ class RubricTests(unittest.TestCase):
         prompt = build_reduce_prompt(
             [rubric, rubric, rubric], 1, "test reduce", "advisor", "",
         )
-        self.assertLessEqual(len(prompt), MAX_MARIO_MESSAGE_CHARS)
+        self.assertLessEqual(len(prompt.encode("utf-8")), MAX_MARIO_MESSAGE_BYTES)
         oversized = json.loads(json.dumps(rubric))
-        oversized["dimensions"][0]["detection_heuristic"] = "x" * MAX_MARIO_MESSAGE_CHARS
+        oversized["dimensions"][0]["what_to_look_for"] = (
+            "中" * MAX_MARIO_MESSAGE_BYTES
+        )
         with self.assertRaises(ValueError):
             build_reduce_prompt([oversized], 1, "oversized", "", "")
         self.assertEqual(REDUCE_BATCH_SIZE, 3)
+        self.assertEqual(DEEP_REDUCE_BATCH_SIZE, 2)
 
     def test_training_loader_skips_zero_byte_video(self):
         with tempfile.TemporaryDirectory() as directory:
