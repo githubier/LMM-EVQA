@@ -19,14 +19,37 @@ sys.path.insert(0, str(ROOT))
 sys.path.insert(0, str(ROOT / "VideoLLaMA2-audio_visual"))
 sys.path.insert(0, str(ZERO_SHOT))
 
-from videollama2 import mm_infer, model_init  # noqa: E402
+from videollama2 import (  # noqa: E402
+    DEFAULT_VIDEO_TOKEN, mm_infer, model_init, tokenizer_multimodal_token,
+)
 from infer_ecr_prompt import (  # noqa: E402
-    _clean, compute_metrics, language_modeling_head, load_batch_samples,
+    _clean, compute_metrics, language_modeling_head,
 )
 from rsi.rubric import (  # noqa: E402
     build_group_prompt, load_rubric, parse_group_answer, weighted_score,
 )
+from rsi.sample_manifest import load_rsi_samples  # noqa: E402
 from rsi.strategy import load_strategy  # noqa: E402
+
+
+def prompt_token_count(prompt: str, model, tokenizer) -> int:
+    """Count input tokens exactly as VideoLLaMA2's video inference path does."""
+    message = [{"role": "user", "content": DEFAULT_VIDEO_TOKEN + "\n" + prompt}]
+    rendered = tokenizer.apply_chat_template(
+        message, tokenize=False, add_generation_prompt=True
+    )
+    input_ids = tokenizer_multimodal_token(
+        rendered, tokenizer, DEFAULT_VIDEO_TOKEN, return_tensors="pt"
+    )
+    return int(input_ids.numel())
+
+
+def successful_resume_records(frame: pd.DataFrame) -> tuple[list[dict], set[str], int]:
+    """Keep completed rows and return the count of failed rows to retry."""
+    successful = frame.loc[frame["ECR"].notna()].copy()
+    records = successful.to_dict("records")
+    completed = set(successful["Id"].astype(str))
+    return records, completed, len(frame) - len(successful)
 
 
 def checkpoint(records: list[dict], output: Path) -> None:
@@ -61,7 +84,7 @@ def main() -> None:
         parser.error("this entry point requires strategy.predictor=videollama2")
     if args.modal_type != strategy["modal_type"]:
         parser.error("--modal-type must match strategy.modal_type")
-    samples = load_batch_samples(args.json_file)
+    samples = load_rsi_samples(args.json_file)
     if args.limit:
         samples = samples[:args.limit]
     output = Path(args.output_detail)
@@ -69,12 +92,16 @@ def main() -> None:
     completed = set()
     if args.resume and output.exists():
         previous = pd.read_csv(output, dtype={"Id": str})
-        records = previous.to_dict("records")
-        completed = set(previous.loc[previous["ECR"].notna(), "Id"].astype(str))
-        print(f"resume: {len(completed)} successful samples")
+        records, completed, retry_count = successful_resume_records(previous)
+        print(
+            f"resume: {len(completed)} successful samples, "
+            f"retrying {retry_count} failed samples",
+            flush=True,
+        )
 
-    print(f"loading local predictor: {args.model_path}")
+    print(f"loading local predictor: {args.model_path}", flush=True)
     model, processor, tokenizer = model_init(args.model_path)
+    print("local predictor loaded", flush=True)
     if args.modal_type == "v":
         model.model.audio_tower = None
     model.eval()
@@ -109,13 +136,62 @@ def main() -> None:
                         + build_group_prompt(rubric, group, title, description)
                         + strategy["prompt_suffix"]
                     )
+                    token_count = prompt_token_count(prompt, model, tokenizer)
+                    token_limit = int(getattr(
+                        model.config, "tokenizer_model_max_length", 2048
+                    ))
+                    if token_count > token_limit:
+                        raise ValueError(
+                            f"group {group_index} prompt has {token_count} tokens, "
+                            f"exceeding model limit {token_limit}; split the call group"
+                        )
                     answer = mm_infer(
                         tensor_cache[seconds], prompt, model=model, tokenizer=tokenizer,
                         modal="video", do_sample=False, temperature=0.0,
                         max_new_tokens=args.max_new_tokens,
                     )
                     answers[f"group_{group_index}"] = answer
-                    dimension_scores.update(parse_group_answer(answer, group))
+                    dimension_scores.update(
+                        parse_group_answer(answer, group, require_all=False)
+                    )
+                    missing_keys = [
+                        key for key in group if key not in dimension_scores
+                    ]
+                    for missing_key in missing_keys:
+                        retry_prompt = (
+                            strategy["prompt_prefix"]
+                            + build_group_prompt(
+                                rubric, [missing_key], title, description
+                            )
+                            + strategy["prompt_suffix"]
+                        )
+                        retry_tokens = prompt_token_count(
+                            retry_prompt, model, tokenizer
+                        )
+                        if retry_tokens > token_limit:
+                            raise ValueError(
+                                f"retry prompt for {missing_key} has "
+                                f"{retry_tokens} tokens, exceeding model limit "
+                                f"{token_limit}"
+                            )
+                        retry_answer = mm_infer(
+                            tensor_cache[seconds], retry_prompt, model=model,
+                            tokenizer=tokenizer, modal="video", do_sample=False,
+                            temperature=0.0, max_new_tokens=args.max_new_tokens,
+                        )
+                        answers[f"group_{group_index}_retry_{missing_key}"] = retry_answer
+                        dimension_scores.update(
+                            parse_group_answer(
+                                retry_answer, [missing_key], require_all=False
+                            )
+                        )
+                    unresolved = [
+                        key for key in group if key not in dimension_scores
+                    ]
+                    if unresolved:
+                        raise ValueError(
+                            f"missing dimensions after retry: {unresolved}"
+                        )
                 prediction = weighted_score(rubric, dimension_scores) * 100.0
             except Exception as exc:  # keep failed samples inspectable and resumable
                 prediction = None
